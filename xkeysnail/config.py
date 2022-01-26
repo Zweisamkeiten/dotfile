@@ -90,9 +90,9 @@ define_layout(layout_name="Colemak", keycode_to_scancode={
 })
 
 # [Global modemap] Change modifier keys as in xmodmap
-define_modmap({
-    Key.CAPSLOCK: Key.LEFT_CTRL
-})
+# define_modmap({
+#     Key.CAPSLOCK: Key.LEFT_CTRL
+# })
 
 # [Conditional modmap] Change modifier keys in certain applications
 define_conditional_modmap(re.compile(r'Emacs'), {
@@ -104,11 +104,11 @@ define_conditional_modmap(re.compile(r'Emacs'), {
 # Carabiner and caps2esc for ideas and concept.
 define_multipurpose_modmap({
     # Enter is enter when pressed and released. Control when held down.
-    Key.ENTER: [Key.ENTER, Key.RIGHT_CTRL] #,
+    Key.ENTER: [Key.ENTER, Key.RIGHT_CTRL],
     # Key.Q: [Key.Q, Key.RIGHT_META]
 
     # Capslock is escape when pressed and released. Control when held down.
-    # {Key.CAPSLOCK: [Key.ESC, Key.LEFT_CTRL]
+    Key.CAPSLOCK: [Key.ESC, Key.LEFT_CTRL],
     # To use this example, you can't remap capslock with define_modmap.
 })
 
