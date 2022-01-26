@@ -3945,6 +3945,9 @@ alias picomconf='vim ~/.config/picom/picom.conf'
 alias rc.lua='vim ~/.config/awesome/rc.lua'
 alias theme.lua='vim ~/.config/awesome/theme.lua'
 
+alias headphon='pactl set-sink-port 0 analog-output-headphones'
+alias speaker='pactl set-sink-port 0 analog-output-speakers'
+
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 export XSERVERRC="$XDG_CONFIG_HOME/X11/xserverrc"
 export HISTFILE="$XDG_DATA_HOME/bash/history"
