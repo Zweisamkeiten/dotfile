@@ -8,3 +8,4 @@ function run {
 }
 
 run ~/c/b/keyboard.sh
+run ~/c/b/display.sh
