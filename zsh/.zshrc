@@ -3931,7 +3931,19 @@ unfunction grml_status_feature
 
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
+alias vim='lvim'
+
+alias ip='ip -coloar=auto'
 alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
+alias lg='lazygit'
+alias ra='ranger --choosedir=$XDG_STATE_HOME/ranger/rangerdir;cd "$(cat $XDG_STATE_HOME/ranger/rangerdir)"'
+alias netprocs='lsof -P -i -n'
+
+# Quick edit
+alias zshrc='vim ~/.config/zsh/.zshrc'
+alias picomconf='vim ~/.config/picom/picom.conf'
+alias rc.lua='vim ~/.config/awesome/rc.lua'
+alias theme.lua='vim ~/.config/awesome/theme.lua'
 
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 export XSERVERRC="$XDG_CONFIG_HOME/X11/xserverrc"
