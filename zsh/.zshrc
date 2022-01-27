@@ -3929,11 +3929,9 @@ zrclocal
 
 unfunction grml_status_feature
 
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-
 alias vim='lvim'
 
-alias ip='ip -coloar=auto'
+alias ip='ip -color=auto'
 alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 alias lg='lazygit'
 alias ra='ranger --choosedir=$XDG_STATE_HOME/ranger/rangerdir;cd "$(cat $XDG_STATE_HOME/ranger/rangerdir)"'
@@ -3941,6 +3939,7 @@ alias netprocs='lsof -P -i -n'
 
 # Quick edit
 alias zshrc='vim ~/.config/zsh/.zshrc'
+alias zshenv='vim ~/.config/zsh/.zshenv'
 alias picomconf='vim ~/.config/picom/picom.conf'
 alias rc.lua='vim ~/.config/awesome/rc.lua'
 alias theme.lua='vim ~/.config/awesome/theme.lua'
@@ -3948,17 +3947,9 @@ alias theme.lua='vim ~/.config/awesome/theme.lua'
 alias headphon='pactl set-sink-port 0 analog-output-headphones'
 alias speaker='pactl set-sink-port 0 analog-output-speakers'
 
-export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
-export XSERVERRC="$XDG_CONFIG_HOME/X11/xserverrc"
-export HISTFILE="$XDG_DATA_HOME/bash/history"
-export CARGO_HOME="$XDG_DATA_HOME/cargo"
-export GTK_RC_FILES="$XDG_CONFIG_HOME/gtk-1.0/gtkrc"
-export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
-export GNUPGHOME="$XDG_DATA_HOME"/gnupg
-export HISTFILE="$XDG_STATE_HOME"/zsh/history
-export GVIMINIT='let $MYGVIMRC="$XDG_CONFIG_HOME/vim/gvimrc" | source $MYGVIMRC'
-export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
-export GOPATH="$XDG_DATA_HOME"/go
+alias proxy='ALL_PROXY="socks://127.0.0.1:20170"'
+#alias gem='https_proxy="https//:127.0.0.1:20172" gem'
+
 
 compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/zcompcache
