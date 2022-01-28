@@ -12,6 +12,8 @@ SAVEHIST=10000000000000
 
 alias vim='lvim'
 
+alias s="neofetch"
+alias la="ls --color -alh -v"
 alias ip='ip -color=auto'
 alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 alias lg='lazygit'

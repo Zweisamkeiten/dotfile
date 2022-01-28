@@ -25,7 +25,7 @@ zmodule duration-info
 zmodule git-info
 # A heavily reduced, ASCII-only version of the Spaceship and Starship prompts.
 # zmodule asciiship
-zmodule steeef
+zmodule Ansimorph/oblong
 
 # Additional completion definitions for Zsh.
 zmodule zsh-users/zsh-completions
