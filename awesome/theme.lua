@@ -19,6 +19,7 @@ theme.bg_focus      = "#22273d"
 theme.bg_urgent     = "#525866"
 theme.bg_minimize   = "#171726"
 theme.bg_systray    = theme.bg_normal
+theme.systray_icon_spacing = 10
 
 theme.fg_normal     = "#aaaaaa"
 theme.fg_focus      = "#ffffff"
