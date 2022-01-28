@@ -19,10 +19,13 @@ alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 alias lg='lazygit'
 alias ra='ranger --choosedir=$XDG_STATE_HOME/ranger/rangerdir;cd "$(cat $XDG_STATE_HOME/ranger/rangerdir)"'
 alias netprocs='lsof -P -i -n'
+alias tr='trans en:zh -x 127.0.0.1:20171 -I'
+alias lxappearance='lxappearance ~/.config/gtk-3.0/settings.ini'
 
 # Quick edit
 alias zshrc='vim ~/.config/zsh/.zshrc'
 alias zshenv='vim ~/.config/zsh/.zshenv'
+alias zshprofile='vim ~/.config/zsh/.zprofile'
 alias zimrc='vim ~/.config/zsh/.zimrc'
 alias picomconf='vim ~/.config/picom/picom.conf'
 alias rc.lua='vim ~/.config/awesome/rc.lua'
@@ -36,6 +39,8 @@ alias proxy='ALL_PROXY="socks://127.0.0.1:20170"'
 
 alias colemak='systemctl --user restart xkeysnail.service && bash ~/c/b/keyboard.sh'
 
+# For those have not respected XDG Base Directory standard
+alias w3m="HOME=$XDG_DATA/w3m w3m"
 
 autoload -Uz compinit
 compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
@@ -43,6 +48,10 @@ zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/zcompcache
 
 if [[ -a "$HOME/.xsession-errors" ]]; then
   rm $HOME/.xsession-errors
+fi
+
+if [[ -a "$HOME/.icons" ]]; then
+  rm -rf $HOME/.icons
 fi
 
 # Start configuration added by Zim install {{{
