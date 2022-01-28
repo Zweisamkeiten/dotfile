@@ -1,4 +1,1 @@
-# For those have not respected XDG Base Directory standard
-alias firefox-developer-edition="HOME=$XDG_DATA_HOME/firefoxdeveloperedition firefox-developer-edition"
-
 fcitx5 &
