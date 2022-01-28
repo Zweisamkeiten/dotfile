@@ -6,6 +6,7 @@ pcall(require, "luarocks.loader")
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
+local awesome, screen, root, client = awesome, screen, root, client
 -- Widget and layout library
 local wibox = require("wibox")
 -- Theme handling library
@@ -96,7 +97,7 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
                                   }
                         })
 
-mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
+mylauncher = awful.widget.launcher({ image = "/home/einsam/.config/awesome/archlinux.svg",
                                      menu = mymainmenu })
 
 -- Menubar configuration
@@ -345,6 +346,16 @@ globalkeys = gears.table.join(
     -- Prompt
     awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
+    -- awful.key({ modkey },  "r",
+    --           function ()
+    --               awful.prompt.run {
+    --                   prompt       = "Run: ",
+    --                   textbox      = awful.screen.focused().mypromptbox.widget,
+    --                   exe_callback = function(cmd) awful.spawn.with_shell(cmd) end,
+    --                   history_path = awful.util.get_cache_dir() .. "/history"
+    --               }
+    --           end,
+    --          {description = "run prompt", group = "launcher"}),
 
     awful.key({ modkey }, "x",
               function ()
