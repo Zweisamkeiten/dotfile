@@ -1,0 +1,3 @@
+[submodule "lvim"]
+	path = lvim
+	url = git@github.com:snitxmhm/lvim.git
