@@ -3950,6 +3950,8 @@ alias speaker='pactl set-sink-port 0 analog-output-speakers'
 alias proxy='ALL_PROXY="socks://127.0.0.1:20170"'
 #alias gem='https_proxy="https//:127.0.0.1:20172" gem'
 
+alias colemak='systemctl --user restart xkeysnail.service && bash ~/c/b/keyboard.sh'
+
 
 compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/zcompcache
