@@ -22,3 +22,6 @@ export NPM_CONFIG_TMP=$XDG_RUNTIME_DIR/npm
 export GEM_HOME="$XDG_DATA_HOME"/gem
 export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem
 export GEMRC="$XDG_CONFIG_HOME/gem/gemrc"
+
+# zplug
+export ZPLUG_HOME="$XDG_CONFIG_HOME/zsh/zplug"
