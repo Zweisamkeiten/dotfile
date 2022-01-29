@@ -26,6 +26,8 @@ export GEMRC="$XDG_CONFIG_HOME/gem/gemrc"
 # zplug
 export ZPLUG_HOME="$XDG_CONFIG_HOME/zsh/zplug"
 
+# zsh-z
+export ZSHZ_DATA=$XDG_CONFIG_HOME/zsh/.zhist
 # For those have not respected XDG Base Directory standard
 #alias firefox-developer-edition="HOME=$XDG_DATA_HOME/firefoxdeveloperedition firefox-developer-edition"
 #alias chromium="HOME=$XDG_DATA_HOME/chromium chromium"
