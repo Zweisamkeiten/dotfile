@@ -105,7 +105,7 @@ define_conditional_modmap(re.compile(r'Emacs'), {
 define_multipurpose_modmap({
     # Enter is enter when pressed and released. Control when held down.
     Key.ENTER: [Key.ENTER, Key.RIGHT_CTRL],
-    # Key.Q: [Key.Q, Key.RIGHT_META]
+    Key.TAB: [Key.TAB, Key.RIGHT_ALT],
 
     # Capslock is escape when pressed and released. Control when held down.
     Key.CAPSLOCK: [Key.ESC, Key.LEFT_CTRL],
