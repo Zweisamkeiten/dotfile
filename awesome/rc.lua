@@ -413,7 +413,15 @@ clientkeys = gears.table.join(
             c.maximized_horizontal = not c.maximized_horizontal
             c:raise()
         end ,
-        {description = "(un)maximize horizontally", group = "client"})
+        {description = "(un)maximize horizontally", group = "client"}),
+
+    -- User
+    awful.key({ modkey, "Shift" }, "a",
+        function ()
+            awful.spawn.with_shell("maim -s $HOME/m/i/screenshot/shot$(date +%F_%H-%M-%S).png")
+        end ,
+        {description = "screenshot", group = "user"}
+      )
 )
 
 -- Bind all key numbers to tags.
