@@ -1,3 +1,6 @@
 [submodule "lvim"]
 	path = lvim
 	url = git@github.com:snitxmhm/lvim.git
+[submodule "emacs"]
+	path = emacs
+	url = git@github.com:snitxmhm/doom-emacs.git
