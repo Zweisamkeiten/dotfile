@@ -25,7 +25,8 @@ zmodule duration-info
 zmodule git-info
 # A heavily reduced, ASCII-only version of the Spaceship and Starship prompts.
 # zmodule asciiship
-zmodule Ansimorph/oblong
+# zmodule Ansimorph/oblong
+zmodule romkatv/powerlevel10k --use degit
 
 # Additional completion definitions for Zsh.
 zmodule zsh-users/zsh-completions
