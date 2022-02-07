@@ -4,4 +4,4 @@ zsh/.zcompdump
 lazygit/state.yml
 zsh/.zim
 zsh/.zcompdump.zwc
-zsh/.zhist
+zsh/.zhist*
