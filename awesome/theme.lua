@@ -11,23 +11,29 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font          = "Sarasa UI SC 10"
+theme.font          = "Sarasa UI SC 12"
 theme.taglist_font          = "Sarasa UI SC 24"
+theme.tasklist_font          = "Victor Mono,Victor Mono Oblique:style=Bold Oblique,Bold Italic 12"
 
 theme.bg_normal     = "#171726"
 theme.bg_focus      = "#22273d"
 theme.bg_urgent     = "#525866"
 theme.bg_minimize   = "#171726"
+theme.prompt_bg     = "#171726"
 theme.bg_systray    = theme.bg_normal
 theme.systray_icon_spacing = 10
+theme.tasklist_disable_icon = true
 
 theme.fg_normal     = "#aaaaaa"
-theme.fg_focus      = "#ffffff"
+theme.fg_focus      = "#5890f8"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
+theme.prompt_fg     = "#5890f8"
+theme.tasklist_fg_focus = "#fa7883"
+theme.tasklist_fg_normal = "#98c379"
 
-theme.useless_gap   = dpi(1.5)
-theme.border_width  = dpi(1)
+theme.useless_gap   = dpi(2)
+theme.border_width  = dpi(2)
 theme.border_normal = "#000000"
 theme.border_focus  = "#5890f8"
 theme.border_marked = "#fa7883"
@@ -46,12 +52,18 @@ theme.border_marked = "#fa7883"
 --theme.taglist_bg_focus = "#ff0000"
 
 -- Generate taglist squares:
-local taglist_square_size = dpi(4)
+local taglist_square_size = dpi(6)
+theme.taglist_spacing = dpi(8)
+theme.taglist_fg_empty = "#5890f8"
+theme.taglist_fg_focus = "#8af5ff"
+theme.taglist_fg_occupied = "#ffc387"
+theme.taglist_fg_urgent = "#fa7883"
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
-    taglist_square_size, theme.fg_normal
+    taglist_square_size, theme.taglist_fg_focus
+
 )
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
-    taglist_square_size, theme.fg_normal
+    taglist_square_size, theme.taglist_fg_occupied
 )
 
 -- Variables set for theming notifications:

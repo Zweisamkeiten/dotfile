@@ -105,11 +105,30 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- }}}
 
 -- Keyboard map indicator and switcher
-mykeyboardlayout = awful.widget.keyboardlayout()
+function keyboardlayout_with_font(font)
+    local result = awful.widget.keyboardlayout()
+    result.widget.font = font
+    return result
+end
+ mykeyboardlayout = wibox.widget {
+    {
+      {
+        widget = keyboardlayout_with_font("Victor Mono,Victor Mono Oblique:style=Bold Oblique,Bold Italic 12")
+      },
+      fg = "#5890f8", -- text color
+      --  bg = "blue",
+      widget = wibox.container.background
+    },
+    bottom = 3,
+    color = "#fa7883",
+    widget = wibox.container.margin
+}
+
+-- mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+mytextclock = wibox.widget.textclock('<span color="#ffc387" font="Victor Mono,Victor Mono Oblique:style=Bold Oblique,Bold Italic 15"> %a %b %d, %H:%M </span>')
 
 
 -- Create a systray widget
