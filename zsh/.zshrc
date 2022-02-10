@@ -61,6 +61,13 @@ if [[ -a "$HOME/.icons" ]]; then
   rm -rf $HOME/.icons
 fi
 
+if [[ -a "$HOME/.mozilla" ]]; then
+  rm -rf $HOME/.mozilla
+fi
+
+if [[ -a "$HOME/.pki" ]]; then
+  rm -rf $HOME/.pki
+fi
 # Start configuration added by Zim install {{{
 #
 # User configuration sourced by interactive shells
