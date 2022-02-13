@@ -27,7 +27,7 @@ export GEMRC="$XDG_CONFIG_HOME/gem/gemrc"
 export ZPLUG_HOME="$XDG_CONFIG_HOME/zsh/zplug"
 
 # zsh-z
-export ZSHZ_DATA=$XDG_CONFIG_HOME/zsh/.zhist
+export ZSHZ_DATA="$XDG_CONFIG_HOME/zsh/.zhist"
 
 # doom
 export DOOMDIR="$XDG_CONFIG_HOME/doom"
