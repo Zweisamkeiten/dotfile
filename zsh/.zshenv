@@ -31,6 +31,11 @@ export ZSHZ_DATA="$XDG_CONFIG_HOME/zsh/.zhist"
 
 # doom
 export DOOMDIR="$XDG_CONFIG_HOME/doom"
+
+# adb .android
+export ANDROID_SDK_ROOT="$XDG_DATA_HOME/android"
+export ANDROID_EMULATOR_HOME="$XDG_DATA_HOME/android"
+export ANDROID_SDK_HOME="$XDG_DATA_HOME/android"
 # For those have not respected XDG Base Directory standard
 #alias firefox-developer-edition="HOME=$XDG_DATA_HOME/firefoxdeveloperedition firefox-developer-edition"
 #alias chromium="HOME=$XDG_DATA_HOME/chromium chromium"

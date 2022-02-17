@@ -47,7 +47,8 @@ alias proxy='ALL_PROXY="socks://127.0.0.1:20170"'
 alias colemak='systemctl --user restart xkeysnail.service && bash ~/c/b/keyboard.sh'
 
 # For those have not respected XDG Base Directory standard
-alias w3m="HOME=$XDG_DATA/w3m w3m"
+alias w3m="HOME=$XDG_DATA_HOME/w3m w3m"
+alias adb="HOME=$XDG_DATA_HOME/adb adb"
 
 autoload -Uz compinit
 compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
