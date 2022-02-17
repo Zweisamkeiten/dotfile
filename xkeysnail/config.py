@@ -133,7 +133,7 @@ define_keymap(re.compile("Firefox|Google-chrome|firefoxdeveloperedition"), {
     # Type C-j to focus to the content
     K("C-j"): K("C-f6"),
     # very naive "Edit in editor" feature (just an example)
-    K("C-o"): [K("C-a"), K("C-c"), launch(["gedit"]), sleep(0.5), K("C-v")]
+    # K("C-o"): [K("C-a"), K("C-c"), launch(["gedit"]), sleep(0.5), K("C-v")]
 }, "Firefox and Chrome")
 
 # Keybindings for Zeal https://github.com/zealdocs/zeal/
@@ -141,6 +141,11 @@ define_keymap(re.compile("Zeal"), {
     # Ctrl+s to focus search area
     K("C-s"): K("C-k"),
 }, "Zeal")
+
+define_keymap(re.compile("obsidian"), {
+    # Ctrl+s to focus search area
+    K("C-t"): K("C-n"),
+}, "obsidian")
 
 # Emacs-like keybindings in non-Emacs applications
 define_keymap(lambda wm_class: wm_class not in ("Emacs", "URxvt", "Alacritty"), {
