@@ -145,7 +145,7 @@ mytextclock = wibox.widget.textclock('<span color="#ffc387" font="Victor Mono,Vi
 
 -- Create a systray widget
 mysystray = wibox.widget.systray()
-mysystray:set_base_size(30)
+-- mysystray:set_base_size(30)
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(

@@ -21,7 +21,7 @@ theme.bg_urgent     = "#f7768e"
 theme.bg_minimize   = "#171726"
 theme.prompt_bg      = "#414868"
 theme.bg_systray    = theme.bg_normal
-theme.systray_icon_spacing = 10
+-- theme.systray_icon_spacing = 10
 theme.tasklist_disable_icon = true
 
 theme.fg_normal     = "#c0caf5"
