@@ -10,3 +10,4 @@ function run {
 run ~/c/b/keyboard.sh
 run ~/c/b/display.sh
 run ~/c/b/audio.sh
+run ~/c/b/app.sh
