@@ -1,7 +1,7 @@
 export EDITOR="lvim"
 
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin:$PATH
+export PATH=$HOME/c/b:$HOME/.local/bin:/usr/local/bin:/usr/bin:$PATH
 export PATH="$PATH:$GEM_HOME/bin"
 
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
