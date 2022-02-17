@@ -5,6 +5,7 @@ pcall(require, "luarocks.loader")
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
+local lain  = require("lain")
 require("awful.autofocus")
 local awesome, screen, root, client = awesome, screen, root, client
 -- Widget and layout library
@@ -104,13 +105,14 @@ mylauncher = awful.widget.launcher({ image = "/home/einsam/.config/awesome/archl
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
 -- }}}
 
+-- mykeyboardlayout = awful.widget.keyboardlayout()
 -- Keyboard map indicator and switcher
 function keyboardlayout_with_font(font)
     local result = awful.widget.keyboardlayout()
     result.widget.font = font
     return result
 end
- mykeyboardlayout = wibox.widget {
+mykeyboardlayout = wibox.widget {
     {
       {
         widget = keyboardlayout_with_font("Victor Mono,Victor Mono Oblique:style=Bold Oblique,Bold Italic 12")
@@ -124,7 +126,17 @@ end
     widget = wibox.container.margin
 }
 
--- mykeyboardlayout = awful.widget.keyboardlayout()
+local markup = lain.util.markup
+local widget_font = 'Inconsolata Nerd Font 18'
+local net = lain.widget.net({
+    settings = function()
+        widget:set_markup(markup.font(widget_font, markup.font(widget_font, markup("#ddffa7", ""))  ..
+                          markup("#ddffa7", " " .. string.format("%4.1f", net_now.received) .. "KB/s")
+                          .. " " ..
+                          markup.font(widget_font, markup("#f07178", ""))  ..
+                          markup("#f07178", " " .. string.format("%4.1f", net_now.sent) .. "KB/s ")))
+    end
+})
 
 -- {{{ Wibar
 -- Create a textclock widget
@@ -236,6 +248,7 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
+            net,
             mykeyboardlayout,
             mysystray,
             mytextclock,
