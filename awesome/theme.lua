@@ -15,22 +15,22 @@ theme.font          = "Sarasa UI SC 12"
 theme.taglist_font          = "Sarasa UI SC 24"
 theme.tasklist_font          = "Victor Mono,Victor Mono Oblique:style=Bold Oblique,Bold Italic 12"
 
-theme.bg_normal     = "#171726"
-theme.bg_focus      = "#22273d"
-theme.bg_urgent     = "#525866"
+theme.bg_normal     = "#1a1b26"
+theme.bg_focus      = "#414868"
+theme.bg_urgent     = "#f7768e"
 theme.bg_minimize   = "#171726"
-theme.prompt_bg     = "#171726"
+theme.prompt_bg      = "#414868"
 theme.bg_systray    = theme.bg_normal
 theme.systray_icon_spacing = 10
 theme.tasklist_disable_icon = true
 
-theme.fg_normal     = "#aaaaaa"
+theme.fg_normal     = "#c0caf5"
 theme.fg_focus      = "#5890f8"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 theme.prompt_fg     = "#5890f8"
-theme.tasklist_fg_focus = "#fa7883"
-theme.tasklist_fg_normal = "#98c379"
+theme.tasklist_fg_focus = "#7dcfff"
+theme.tasklist_fg_normal = "#bb9af7"
 
 theme.useless_gap   = dpi(2)
 theme.border_width  = dpi(2)
