@@ -17,7 +17,8 @@ SAVEHIST=10000000000000
 
 # # End of lines added by compinstall
 
-alias vim='lvim'
+# alias vim='lvim'
+alias e='lvim'
 
 alias s="neofetch"
 alias la="ls --color -alh -v"
@@ -30,13 +31,13 @@ alias trans='trans en:zh -x 127.0.0.1:20171 -I'
 alias lxappearance='lxappearance ~/.config/gtk-3.0/settings.ini'
 
 # Quick edit
-alias zshrc='vim ~/.config/zsh/.zshrc'
-alias zshenv='vim ~/.config/zsh/.zshenv'
-alias zshprofile='vim ~/.config/zsh/.zprofile'
-alias zimrc='vim ~/.config/zsh/.zimrc'
-alias picomconf='vim ~/.config/picom/picom.conf'
-alias rc.lua='vim ~/.config/awesome/rc.lua'
-alias theme.lua='vim ~/.config/awesome/theme.lua'
+alias zshrc='lvim ~/.config/zsh/.zshrc'
+alias zshenv='lvim ~/.config/zsh/.zshenv'
+alias zshprofile='lvim ~/.config/zsh/.zprofile'
+alias zimrc='lvim ~/.config/zsh/.zimrc'
+alias picomconf='lvim ~/.config/picom/picom.conf'
+alias rc.lua='lvim ~/.config/awesome/rc.lua'
+alias theme.lua='lvim ~/.config/awesome/theme.lua'
 
 alias headphone='pactl set-sink-port 0 analog-output-headphone'
 alias speaker='pactl set-sink-port 0 analog-output-speaker'
