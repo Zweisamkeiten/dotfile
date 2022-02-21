@@ -39,8 +39,8 @@ alias picomconf='lvim ~/.config/picom/picom.conf'
 alias rc.lua='lvim ~/.config/awesome/rc.lua'
 alias theme.lua='lvim ~/.config/awesome/theme.lua'
 
-alias headphone='pactl set-sink-port 0 analog-output-headphone'
-alias speaker='pactl set-sink-port 0 analog-output-speaker'
+alias headphone='pactl set-sink-port alsa_output.pci-0000_00_1f.3.analog-stereo analog-output-headphones'
+alias speaker='pactl set-sink-port alsa_output.pci-0000_00_1f.3.analog-stereo analog-output-speaker'
 
 alias proxy='ALL_PROXY="socks://127.0.0.1:20170"'
 #alias gem='https_proxy="https//:127.0.0.1:20172" gem'
