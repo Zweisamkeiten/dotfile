@@ -662,3 +662,7 @@ awful.spawn.with_shell(
 
 -- autorun.sh
 awful.spawn.with_shell("~/.config/awesome/autorun.sh")
+
+-- This limits the size of notication icon
+naughty.config.defaults['icon_size'] = 100
+
