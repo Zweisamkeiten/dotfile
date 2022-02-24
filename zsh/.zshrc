@@ -5,9 +5,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+HISTSIZE=1000000
+SAVEHIST=1000000
 HISTFILE=$XDG_STATE_HOME/zsh/.histfile
-HISTSIZE=10000000000
-SAVEHIST=10000000000000
+# prevent history from duplicated entries
+setopt hist_ignore_all_dups
+# ignore recording by manually add space
+setopt hist_ignore_space
 # autoload -Uz compinit promptinit
 # compinit
 # promptinit
