@@ -3,6 +3,7 @@ export EDITOR="lvim"
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH=$HOME/c/b:$HOME/.local/bin:/usr/local/bin:/usr/bin:$PATH
 export PATH="$PATH:$GEM_HOME/bin"
+export PATH="/usr/lib/ccache/bin:$PATH"
 
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 export XSERVERRC="$XDG_CONFIG_HOME/X11/xserverrc"
@@ -22,7 +23,7 @@ export NPM_CONFIG_TMP=$XDG_RUNTIME_DIR/npm
 export GEM_HOME="$XDG_DATA_HOME"/gem
 export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem
 export GEMRC="$XDG_CONFIG_HOME/gem/gemrc"
-export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 
 # zplug
 export ZPLUG_HOME="$XDG_CONFIG_HOME/zsh/zplug"
@@ -41,3 +42,5 @@ export ANDROID_SDK_HOME="$XDG_DATA_HOME/android"
 #alias firefox-developer-edition="HOME=$XDG_DATA_HOME/firefoxdeveloperedition firefox-developer-edition"
 #alias chromium="HOME=$XDG_DATA_HOME/chromium chromium"
 
+export NEMU_HOME=/home/einsam/p/ics2021/nemu
+export AM_HOME=/home/einsam/p/ics2021/abstract-machine

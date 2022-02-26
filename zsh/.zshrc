@@ -36,6 +36,7 @@ alias lxappearance='lxappearance ~/.config/gtk-3.0/settings.ini'
 
 # Quick edit
 alias zshrc='lvim ~/.config/zsh/.zshrc'
+alias vimrc='vim ~/.config/vim/vimrc'
 alias zshenv='lvim ~/.config/zsh/.zshenv'
 alias zshprofile='lvim ~/.config/zsh/.zprofile'
 alias zimrc='lvim ~/.config/zsh/.zimrc'

@@ -15,8 +15,8 @@ set undodir=$XDG_CACHE_HOME/vim/undo     | call mkdir(&undodir,   'p')
 
 if !has('nvim') | set viminfofile=$XDG_STATE_HOME/vim/viminfo | endif
 
-syntax on
 set background=dark
+syntax on
 
 " Uncomment the following to have Vim load indentation rules and plugins
 " according to the detected filetype.
@@ -32,7 +32,8 @@ set hidden             " Hide buffers when they are abandoned
 "set mouse=a            " Enable mouse usage (all modes)
 setlocal noswapfile " 不要生成swap文件
 set bufhidden=hide " 当buffer被丢弃的时候隐藏它
-colorscheme peachpuff " 设定配色方案
+colorscheme industry " 设定配色方案
+hi Normal guibg=NONE ctermbg=NONE
 set number " 显示行号
 set cursorline " 突出显示当前行
 set ruler " 打开状态栏标尺
