@@ -127,9 +127,9 @@ define_conditional_multipurpose_modmap(lambda wm_class, device_name: device_name
 
 # Keybindings for Firefox/Chrome
 define_keymap(re.compile("Firefox|Google-chrome|firefoxdeveloperedition"), {
-    # Ctrl+Alt+j/k to switch next/previous tab
-    K("C-M-j"): K("C-TAB"),
-    K("C-M-k"): K("C-Shift-TAB"),
+    # Ctrl+Alt+n/p to switch next/previous tab
+    K("C-M-n"): K("C-TAB"),
+    K("C-M-p"): K("C-Shift-TAB"),
     # Type C-j to focus to the content
     K("C-j"): K("C-f6"),
     # very naive "Edit in editor" feature (just an example)
