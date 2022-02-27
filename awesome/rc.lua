@@ -453,6 +453,12 @@ clientkeys = gears.table.join(
             awful.spawn.with_shell("maim -s $HOME/m/i/screenshot/shot$(date +%F_%H-%M-%S).png")
         end ,
         {description = "screenshot", group = "user"}
+      ),
+    awful.key({ modkey, "Shift" }, "s",
+        function ()
+            awful.spawn.with_shell("maim -s -u | xclip -selection clipboard -t image/png -i")
+        end ,
+        {description = "screenshot", group = "user"}
       )
 )
 
