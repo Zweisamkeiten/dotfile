@@ -1,5 +1,5 @@
 {
-	"aururl": "https://aur.tuna.tsinghua.edu.cn",
+	"aururl": "https://aur.archlinux.org",
 	"buildDir": "/home/einsam/.cache/yay",
 	"editor": "",
 	"editorflags": "",
