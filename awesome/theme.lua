@@ -15,8 +15,8 @@ theme.font          = "Sarasa UI SC 12"
 theme.taglist_font          = "Sarasa UI SC 24"
 theme.tasklist_font          = "Victor Mono,Victor Mono Oblique:style=Bold Oblique,Bold Italic 12"
 
-theme.bg_normal     = "#1a1b26"
-theme.bg_focus      = "#414868"
+theme.bg_normal     = "#15161e"
+theme.bg_focus      = "#1a1b26"
 theme.bg_urgent     = "#f7768e"
 theme.bg_minimize   = "#171726"
 theme.prompt_bg      = "#414868"
@@ -29,13 +29,13 @@ theme.fg_focus      = "#5890f8"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 theme.prompt_fg     = "#5890f8"
-theme.tasklist_fg_focus = "#7dcfff"
-theme.tasklist_fg_normal = "#bb9af7"
+theme.tasklist_fg_focus = "#7aa2f7"
+theme.tasklist_fg_normal = "#c0caf5"
 
 theme.useless_gap   = dpi(2)
 theme.border_width  = dpi(2)
-theme.border_normal = "#000000"
-theme.border_focus  = "#5890f8"
+theme.border_normal = "#e0af68"
+theme.border_focus  = "#7aa2f7"
 theme.border_marked = "#fa7883"
 
 -- There are other variable sets
@@ -111,7 +111,7 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path.."default/titlebar
 theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = "/home/einsam/.config/awesome/wp1.png"
+theme.wallpaper = "/home/einsam/.config/awesome/canvas.png"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"
