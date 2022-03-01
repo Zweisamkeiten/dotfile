@@ -23,6 +23,8 @@ setopt hist_ignore_space
 
 # alias vim='lvim'
 alias e='lvim'
+alias vf='vim $(fzf)'
+alias ef='vim $(fzf)'
 
 alias s="neofetch"
 alias la="ls --color -alh -v"
