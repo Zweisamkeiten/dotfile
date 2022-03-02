@@ -20,6 +20,8 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
+-- modalbind
+local modalbind = require("modalbind")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -51,9 +53,10 @@ end
 beautiful.init("/home/einsam/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "alacritty"
-editor = os.getenv("EDITOR") or "vim"
-editor_cmd = terminal .. " -e " .. editor
+local terminal = "alacritty"
+local editor = os.getenv("EDITOR") or "vim"
+local editor_cmd = terminal .. " --command=" .. editor
+local filemanager = "ranger"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -266,8 +269,22 @@ root.buttons(gears.table.join(
 ))
 -- }}}
 
+modalbind.init()
+local modmap = {
+  { "e", function() awful.util.spawn(terminal .. " --command=" .. editor) end, "Editor"},
+  { "f", function() awful.util.spawn(terminal .. " --command=" .. filemanager) end, "FileManager"},
+  { "v", function()
+    awful.util.spawn(terminal .. " --class=videodir" .. " -e " .. "zsh -c 'cd $(xdg-user-dir VIDEOS) && ranger --choosedir=$XDG_STATE_HOME/ranger/rangerdir'")
+  end, "VideoDir"}
+}
+
 -- {{{ Key bindings
 globalkeys = gears.table.join(
+    awful.key({ modkey }, "d",
+        function ()
+          modalbind.grab{keymap=modmap, name="modmap", stay_in_mode=true}
+    end,
+      {description = "toggle fullscreen", group = "client"}),
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
@@ -367,7 +384,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
               {description = "select previous", group = "layout"}),
 
-    awful.key({ modkey, "Control" }, "k",
+    awful.key({ modkey, "Control" }, ".",
               function ()
                   local c = awful.client.restore()
                   -- Focus restored client
@@ -425,7 +442,7 @@ clientkeys = gears.table.join(
               {description = "move to screen", group = "client"}),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
               {description = "toggle keep on top", group = "client"}),
-    awful.key({ modkey,           }, "k",
+    awful.key({ modkey,           }, ".",
         function (c)
             -- The client currently has the input focus, so it cannot be
             -- minimized, since minimized clients can't have the focus.
@@ -594,6 +611,14 @@ awful.rules.rules = {
     -- Set icaliigua to always map on the tag index 9 on screen focused now.
     { rule = { class = "icalingua" },
       properties = { screen = 1, tag = awful.screen.focused().tags[9], switchtotag = true } },
+
+    -- Set all video related clients to index 4 on screen focused now.
+    { rule_any = {
+        instance = {
+          "videodir"
+        },
+      },properties = { screen = 1, tag = awful.screen.focused().tags[4], switchtotag = true },
+    }
 }
 -- }}}
 

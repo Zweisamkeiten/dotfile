@@ -38,6 +38,13 @@ theme.border_normal = "#e0af68"
 theme.border_focus  = "#7aa2f7"
 theme.border_marked = "#fa7883"
 
+-- theme for modalbind
+theme.modalbind_font = "monospace 18" -- font
+theme.modebox_fg = "#7aa2f7"         -- foreground
+theme.modebox_bg = "#1a1b26"         -- background
+theme.modebox_border = "#e0af68"     -- border color
+theme.modebox_border_width = 1       -- border width
+
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:
@@ -111,7 +118,7 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path.."default/titlebar
 theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = "/home/einsam/.config/awesome/canvas.png"
+theme.wallpaper = "/home/einsam/c/awesome/f34day.png"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"
