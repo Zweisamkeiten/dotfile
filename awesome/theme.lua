@@ -61,13 +61,12 @@ theme.modebox_border_width = 1       -- border width
 -- Generate taglist squares:
 local taglist_square_size = dpi(6)
 theme.taglist_spacing = dpi(8)
-theme.taglist_fg_empty = "#5890f8"
+theme.taglist_fg_empty = "#bb9af7"
 theme.taglist_fg_focus = "#8af5ff"
 theme.taglist_fg_occupied = "#ffc387"
 theme.taglist_fg_urgent = "#fa7883"
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
     taglist_square_size, theme.taglist_fg_focus
-
 )
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
     taglist_square_size, theme.taglist_fg_occupied

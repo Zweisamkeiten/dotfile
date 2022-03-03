@@ -68,6 +68,7 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
     awful.layout.suit.tile,
+    lain.layout.centerwork,
     awful.layout.suit.floating,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
@@ -124,8 +125,8 @@ mykeyboardlayout = wibox.widget {
       --  bg = "blue",
       widget = wibox.container.background
     },
-    bottom = 3,
-    color = "#fa7883",
+    bottom = 4,
+    color = "#7aa2f7",
     widget = wibox.container.margin
 }
 
@@ -140,14 +141,37 @@ local net = lain.widget.net({
                           markup("#f07178", " " .. string.format("%4.1f", net_now.sent) .. "KB/s ")))
     end
 })
+mynet = wibox.widget {
+    net,
+    bottom = 4,
+    color = "#bb9af7",
+    widget = wibox.container.margin
+}
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock('<span color="#ffc387" font="Victor Mono,Victor Mono Oblique:style=Bold Oblique,Bold Italic 15"> %a %b %d, %H:%M </span>')
+-- mytextclock = wibox.widget.textclock('<span color="#ffc387" font="Victor Mono,Victor Mono Oblique:style=Bold Oblique,Bold Italic 15"> %a %b %d, %H:%M </span>')
+mytextclock = wibox.widget {
+    {
+      {
+        widget = wibox.widget.textclock('<span color="#ffc387" font="Victor Mono,Victor Mono Oblique:style=Bold Oblique,Bold Italic 15"> %a %b %d, %H:%M </span>')
+      },
+      --  bg = "blue",
+      widget = wibox.container.background
+    },
+    bottom = 4,
+    color = "#ffc387",
+    widget = wibox.container.margin
+}
 
 
 -- Create a systray widget
-mysystray = wibox.widget.systray()
+mysystray = wibox.widget {
+    wibox.widget.systray(),
+    bottom = 4,
+    color = "#f7768e",
+    widget = wibox.container.margin
+}
 -- mysystray:set_base_size(30)
 
 -- Create a wibox for each screen and add it
@@ -251,7 +275,7 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            net,
+            mynet,
             mykeyboardlayout,
             mysystray,
             mytextclock,
