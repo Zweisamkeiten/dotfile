@@ -1,0 +1,10 @@
+#!/bin/bash
+
+ip link set wlan0 down
+ip link set wlan0 address 82:6B:35:FD:9F:55
+ip link set wlan0 up
+
+sleep 3
+nmcli device wifi rescan
+sleep 0.5
+nmcli device wifi connect ZJGSU-Teacher

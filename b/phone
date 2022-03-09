@@ -7,4 +7,4 @@ if [[ $JUDGE_IF_HOTSPOT = 1 ]]; then
 else
   HOME=$XDG_DATA_HOME/adb adb connect "$DEFAULT_ROUTE:5555"
 fi
-nohup scrcpy --shortcut-mod lctrl --push-target /sdcard/Pictures & > /tmp/nohup.out
+nohup scrcpy --shortcut-mod lctrl --push-target /sdcard/Pictures >> /tmp/nohup.out &
