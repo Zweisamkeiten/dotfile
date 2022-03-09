@@ -44,3 +44,21 @@ export ANDROID_SDK_HOME="$XDG_DATA_HOME/android"
 
 export NEMU_HOME=/home/einsam/p/ics2021/nemu
 export AM_HOME=/home/einsam/p/ics2021/abstract-machine
+
+export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
+export PATH=$JAVA_HOME/bin:$PATH
+
+# flutter mirror
+export FLUTTER_STORAGE_BASE_URL="https://mirrors.tuna.tsinghua.edu.cn/flutter"
+export PUB_HOSTED_URL="https://mirrors.tuna.tsinghua.edu.cn/dart-pub"
+export CHROME_EXECUTABLE="/usr/bin/chromium"
+
+export ANDROID_SDK_ROOT='/opt/android-sdk'
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools/
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin/
+export PATH=$PATH:$ANDROID_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools/
+
+export PUB_CACHE="$XDG_CACHE_HOME/pub"
+
+export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
