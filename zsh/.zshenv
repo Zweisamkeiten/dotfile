@@ -62,3 +62,5 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/tools/
 export PUB_CACHE="$XDG_CACHE_HOME/pub"
 
 export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
+
+export GDBHISTFILE="$XDG_DATA_HOME"/gdb/history
