@@ -125,7 +125,7 @@ mykeyboardlayout = wibox.widget {
       --  bg = "blue",
       widget = wibox.container.background
     },
-    bottom = 4,
+    bottom = 5,
     color = "#7aa2f7",
     widget = wibox.container.margin
 }
@@ -143,7 +143,7 @@ local net = lain.widget.net({
 })
 mynet = wibox.widget {
     net,
-    bottom = 4,
+    bottom = 5,
     color = "#bb9af7",
     widget = wibox.container.margin
 }
@@ -159,7 +159,7 @@ mytextclock = wibox.widget {
       --  bg = "blue",
       widget = wibox.container.background
     },
-    bottom = 4,
+    bottom = 5,
     color = "#ffc387",
     widget = wibox.container.margin
 }
@@ -168,7 +168,7 @@ mytextclock = wibox.widget {
 -- Create a systray widget
 mysystray = wibox.widget {
     wibox.widget.systray(),
-    bottom = 4,
+    bottom = 5,
     color = "#f7768e",
     widget = wibox.container.margin
 }
@@ -295,7 +295,7 @@ root.buttons(gears.table.join(
 
 modalbind.init()
 local modmap = {
-  { "e", function() awful.util.spawn(terminal .. " --command=" .. editor) end, "Editor"},
+  { "e", function() awful.util.spawn(terminal .. " -e " .. "zsh -c '$HOME/.local/bin/lvim'") end, "Editor"},
   { "f", function() awful.util.spawn(terminal .. " --command=" .. filemanager) end, "FileManager"},
   { "v", function()
     awful.util.spawn(terminal .. " --class=videodir" .. " -e " .. "zsh -c 'cd $(xdg-user-dir VIDEOS) && ranger --choosedir=$XDG_STATE_HOME/ranger/rangerdir'")
