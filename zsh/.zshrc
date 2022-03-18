@@ -5,8 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-HISTSIZE=1000000
-SAVEHIST=1000000
+HISTSIZE=50000000
+SAVEHIST=50000000
 HISTFILE=$XDG_STATE_HOME/zsh/.histfile
 # prevent history from duplicated entries
 setopt hist_ignore_all_dups
@@ -18,6 +18,7 @@ setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
 #add timestamp for each entry
 setopt EXTENDED_HISTORY
+
 # autoload -Uz compinit promptinit
 # compinit
 # promptinit
@@ -235,3 +236,9 @@ source /usr/share/fzf/completion.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+hist_filesize=$(stat -c%s "$XDG_STATE_HOME/zsh/.histfile")
+if [[ $hist_filesize -lt 64000 ]]; then
+    # echo "History file is lower than 64 kbytes, restoring backup..."
+    cp -f $HOME/p/backup/zsh/.histfile $XDG_STATE_HOME/zsh/.histfile
+fi
