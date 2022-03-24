@@ -30,8 +30,8 @@ setopt EXTENDED_HISTORY
 
 # alias vim='lvim'
 alias e='lvim'
-alias vf='vim $(fzf)'
-alias ef='vim $(fzf)'
+alias vf='vim $(fzf --height=40%)'
+alias ef='lvim $(fzf)'
 
 alias s="neofetch"
 alias la="ls --color -alh -v"
