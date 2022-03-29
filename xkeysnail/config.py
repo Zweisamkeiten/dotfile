@@ -145,6 +145,7 @@ define_keymap(re.compile("Zeal"), {
 define_keymap(re.compile("obsidian"), {
     # Ctrl+s to focus search area
     K("C-t"): K("C-n"),
+    K("C-o"): K("C-o"),
 }, "obsidian")
 
 # Emacs-like keybindings in non-Emacs applications
