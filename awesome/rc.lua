@@ -234,7 +234,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "", "", "", "", "", "", "", "", "" }, s, awful.layout.layouts[1])
+    awful.tag({ "", "", "", "", "", "", "", "", "" }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -297,6 +297,7 @@ modalbind.init()
 local modmap = {
   { "e", function() awful.util.spawn(terminal .. " -e " .. "zsh -c '$HOME/.local/bin/lvim'") end, "Editor"},
   { "q", function() awful.util.spawn(terminal .. " -e " .. "zsh -c 'emacsclient -nc'") end, "Emacs"},
+  { "z", function() awful.util.spawn("zathura") end, "Zathura"},
   { "f", function() awful.util.spawn(terminal .. " --command=" .. filemanager) end, "FileManager"},
   { "v", function()
     awful.util.spawn(terminal .. " --class=videodir" .. " -e " .. "zsh -c 'cd $(xdg-user-dir VIDEOS) && ranger --choosedir=$XDG_STATE_HOME/ranger/rangerdir'")
@@ -474,19 +475,19 @@ clientkeys = gears.table.join(
             c.minimized = true
         end ,
         {description = "minimize", group = "client"}),
-    awful.key({ modkey,           }, "m",
+    awful.key({ modkey,           }, ",",
         function (c)
             c.maximized = not c.maximized
             c:raise()
         end ,
         {description = "(un)maximize", group = "client"}),
-    awful.key({ modkey, "Control" }, "m",
+    awful.key({ modkey, "Control" }, ",",
         function (c)
             c.maximized_vertical = not c.maximized_vertical
             c:raise()
         end ,
         {description = "(un)maximize vertically", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "m",
+    awful.key({ modkey, "Shift"   }, ",",
         function (c)
             c.maximized_horizontal = not c.maximized_horizontal
             c:raise()
