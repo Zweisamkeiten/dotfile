@@ -22,10 +22,10 @@ syntax on                  " Enable syntax highlighting.
 
 set autoindent             " Indent according to previous line.
 set expandtab              " Use spaces instead of tabs.
-set tabstop     =4         " 设定 tab 长度为 4
-set softtabstop =4         " Tab key indents by 4 spaces.
+set tabstop     =2         " 设定 tab 长度为 4
+set softtabstop =2         " Tab key indents by 4 spaces.
                            " 使得按退格键时可以一次删掉 4 个空格
-set shiftwidth  =4         " >> indents by 4 spaces.
+set shiftwidth  =2         " >> indents by 4 spaces.
                            " 设定 << 和 >> 命令移动时的宽度为 4
 set shiftround             " >> indents to next multiple of 'shiftwidth'.
 set ruler                  " 打开状态栏标尺
