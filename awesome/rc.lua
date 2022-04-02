@@ -132,6 +132,30 @@ mykeyboardlayout = wibox.widget {
 
 local markup = lain.util.markup
 local widget_font = 'Inconsolata Nerd Font 18'
+
+local baticon = wibox.widget.textbox('arstrst')
+local bat = awful.widget.watch([[bash -c "echo $(cat /sys/class/power_supply/BAT0/capacity)"]], 60, function(widget, stdout)
+  local level = tonumber(stdout) // 25
+  if level == 0 then baticon:set_markup('<span color="#7dcfff" font="'..widget_font..'">  </span>') end
+  if level == 1 then baticon:set_markup('<span color="#7dcfff" font="'..widget_font..'">  </span>') end
+  if level == 2 then baticon:set_markup('<span color="#7dcfff" font="'..widget_font..'">  </span>') end
+  if level == 3 then baticon:set_markup('<span color="#7dcfff" font="'..widget_font..'">  </span>') end
+  if level == 4 then baticon:set_markup('<span color="#7dcfff" font="'..widget_font..'">  </span>') end
+
+  widget:set_markup('<span color="#7dcfff" font="'..widget_font..'">' ..stdout..'%</span> ')
+end)
+mybat = wibox.widget {
+  {
+    layout = wibox.layout.fixed.horizontal,
+
+    baticon,
+    bat,
+  },
+    bottom = 5,
+    color = "#7dcfff",
+    widget = wibox.container.margin
+}
+
 local net = lain.widget.net({
     settings = function()
         widget:set_markup(markup.font(widget_font, markup.font(widget_font, markup("#ddffa7", ""))  ..
@@ -276,6 +300,7 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             mynet,
+            mybat,
             mykeyboardlayout,
             mysystray,
             mytextclock,
