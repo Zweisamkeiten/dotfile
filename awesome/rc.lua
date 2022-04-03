@@ -119,7 +119,7 @@ end
 mykeyboardlayout = wibox.widget {
     {
       {
-        widget = keyboardlayout_with_font("Victor Mono,Victor Mono Oblique:style=Bold Oblique,Bold Italic 12")
+        widget = keyboardlayout_with_font("Nothing You Could Do 18")
       },
       fg = "#5890f8", -- text color
       --  bg = "blue",
@@ -133,7 +133,7 @@ mykeyboardlayout = wibox.widget {
 local markup = lain.util.markup
 local widget_font = 'Inconsolata Nerd Font 18'
 
-local baticon = wibox.widget.textbox('arstrst')
+local baticon = wibox.widget.textbox('')
 local bat = awful.widget.watch([[bash -c "echo $(cat /sys/class/power_supply/BAT0/capacity)"]], 60, function(widget, stdout)
   local level = tonumber(stdout) // 25
   if level == 0 then baticon:set_markup('<span color="#7dcfff" font="'..widget_font..'">  </span>') end
@@ -178,7 +178,7 @@ mynet = wibox.widget {
 mytextclock = wibox.widget {
     {
       {
-        widget = wibox.widget.textclock('<span color="#ffc387" font="Victor Mono,Victor Mono Oblique:style=Bold Oblique,Bold Italic 15"> %a %b %d, %H:%M </span>')
+        widget = wibox.widget.textclock('<span color="#ffc387" font="Nothing You Could Do 18"> %a %b %d, %H:%M </span>')
       },
       --  bg = "blue",
       widget = wibox.container.background

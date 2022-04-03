@@ -13,7 +13,7 @@ local theme = {}
 
 theme.font          = "Sarasa UI SC 12"
 theme.taglist_font          = "Sarasa UI SC 24"
-theme.tasklist_font          = "Victor Mono,Victor Mono Oblique:style=Bold Oblique,Bold Italic 12"
+theme.tasklist_font          = "taglistfont 16"
 
 theme.bg_normal     = "#15161e"
 theme.bg_focus      = "#1a1b26"
@@ -117,7 +117,7 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path.."default/titlebar
 theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = "/home/einsam/c/awesome/f34day.png"
+theme.wallpaper = "/home/einsam/c/awesome/wp.jpg"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"
