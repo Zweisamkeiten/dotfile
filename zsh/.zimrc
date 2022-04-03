@@ -4,6 +4,7 @@
 # -------
 
 # Sets sane Zsh built-in environment options.
+# 会影响$SAVEHIST $HISTSIZE
 zmodule environment
 # Provides handy git aliases and functions.
 zmodule git

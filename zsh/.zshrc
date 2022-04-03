@@ -5,20 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-HISTSIZE=50000000
-SAVEHIST=50000000
-HISTFILE=$XDG_STATE_HOME/zsh/.histfile
-# prevent history from duplicated entries
-setopt hist_ignore_all_dups
-# ignore recording by manually add space
-setopt hist_ignore_space
-#append into history file
-setopt INC_APPEND_HISTORY
-#save only one command if 2 common are same and consistent
-setopt HIST_IGNORE_DUPS
-#add timestamp for each entry
-setopt EXTENDED_HISTORY
-
 # autoload -Uz compinit promptinit
 # compinit
 # promptinit
@@ -87,6 +73,11 @@ fi
 if [[ -a "$HOME/.pki" ]]; then
   rm -rf $HOME/.pki
 fi
+
+if [[ -a "$HOME/.w3m" ]]; then
+  rm -rf $HOME/.w3m
+fi
+
 # Start configuration added by Zim install {{{
 #
 # User configuration sourced by interactive shells
@@ -205,6 +196,19 @@ if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
 fi
 source ${ZIM_HOME}/init.zsh
 
+HISTSIZE=5000000000
+SAVEHIST=5000000000
+HISTFILE=$XDG_STATE_HOME/zsh/.histfile
+# prevent history from duplicated entries
+setopt hist_ignore_all_dups
+# ignore recording by manually add space
+setopt hist_ignore_space
+#append into history file
+setopt INC_APPEND_HISTORY
+#save only one command if 2 common are same and consistent
+setopt HIST_IGNORE_DUPS
+#add timestamp for each entry
+setopt EXTENDED_HISTORY
 # ------------------------------
 # Post-init module configuration
 # ------------------------------
