@@ -118,6 +118,13 @@ set undofile
 set undodir     =$XDG_CACHE_HOME/vim/files/undo     | call mkdir(&undodir,   'p')
 if !has('nvim') | set viminfofile=$XDG_CACHE_HOME/vim/files/info/viminfo | endif
 
+"cmdline-editing
+cnoremap <C-A> <Home>
+cnoremap <C-F> <Right>
+cnoremap <C-B> <Left>
+cnoremap <Esc>b <S-Left>
+cnoremap <Esc>f <S-Right>
+
 " Set main configuration directory as parent directory
 let $VIM_PATH = fnamemodify(resolve(expand('<sfile>:p')), ':h:h')
 execute 'source' fnamemodify(expand('<sfile>'), ':h').'/pack/plugins.vim'
