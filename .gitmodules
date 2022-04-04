@@ -19,3 +19,6 @@
 [submodule "vim/pack/plugins/start/ack.vim"]
 	path = vim/pack/plugins/start/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
+[submodule "vim/pack/plugins/start/vim-easymotion"]
+	path = vim/pack/plugins/start/vim-easymotion
+	url = https://github.com/easymotion/vim-easymotion.git
