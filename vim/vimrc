@@ -57,8 +57,11 @@ set lazyredraw             " Only redraw when necessary.
 set splitbelow             " Open new windows below the current window.
 set splitright             " Open new windows right of the current window.
 
-colorscheme elflord       " 设定配色方案
+set termguicolors
+packadd! onedark.vim
+colorscheme onedark       " 设定配色方案
 hi Normal guibg=NONE ctermbg=NONE
+let g:onedark_terminal_italics=1
 
 set cursorline             " Find the current line quickly.
 set number                 " 显示行号

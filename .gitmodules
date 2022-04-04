@@ -10,3 +10,6 @@
 [submodule "vim/pack/plugins/start/ctrlp.vim"]
 	path = vim/pack/plugins/start/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "vim/pack/themes/opt/onedark.vim"]
+	path = vim/pack/themes/opt/onedark.vim
+	url = https://github.com/joshdick/onedark.vim.git
