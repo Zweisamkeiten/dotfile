@@ -7,18 +7,6 @@
 [submodule "awesome/modalbind"]
 	path = awesome/modalbind
 	url = https://github.com/crater2150/awesome-modalbind.git
-[submodule "vim/pack/plugins/start/ctrlp.vim"]
-	path = vim/pack/plugins/start/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim.git
-[submodule "vim/pack/themes/opt/onedark.vim"]
-	path = vim/pack/themes/opt/onedark.vim
-	url = https://github.com/joshdick/onedark.vim.git
-[submodule "vim/pack/plugins/start/nerdtree"]
-	path = vim/pack/plugins/start/nerdtree
-	url = https://github.com/preservim/nerdtree.git
-[submodule "vim/pack/plugins/start/ack.vim"]
-	path = vim/pack/plugins/start/ack.vim
-	url = https://github.com/mileszs/ack.vim.git
-[submodule "vim/pack/plugins/start/vim-easymotion"]
-	path = vim/pack/plugins/start/vim-easymotion
-	url = https://github.com/easymotion/vim-easymotion.git
+[submodule "vim"]
+	path = vim
+	url = https://github.com/Zweisamkeiten/vimrc.git
