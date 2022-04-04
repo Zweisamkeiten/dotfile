@@ -17,6 +17,9 @@ set viewdir=$XDG_DATA_HOME/vim/view | call mkdir(&viewdir, 'p')
 " We set it explicitely to make our position clear!
 set nocompatible
 
+" Disable the default Vim startup message.
+set shortmess+=I
+
 filetype plugin indent on  " Load plugins according to detected filetype.
 syntax on                  " Enable syntax highlighting.
 
@@ -59,6 +62,7 @@ hi Normal guibg=NONE ctermbg=NONE
 
 set cursorline             " Find the current line quickly.
 set number                 " 显示行号
+set relativenumber         " 显示相对行号
 set wrapscan               " Searches wrap around end-of-file.
 set report      =0         " Always report changed lines.
 set synmaxcol   =200       " Only highlight the first 200 columns.
@@ -67,7 +71,7 @@ set synmaxcol   =200       " Only highlight the first 200 columns.
 set showmatch              " Show matching brackets.
 set ignorecase             " Do case insensitive matching
 set smartcase              " Do smart case matching
-set incsearch              " Incremental search
+set incsearch              " Incremental search. Enable searching as you type, rather than waiting till you press enter.
 
 ""set autowrite          " Automatically save before commands like :next and :make
 set mouse       =a       " Enable mouse usage (all modes)
