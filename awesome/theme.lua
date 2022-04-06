@@ -45,6 +45,13 @@ theme.modebox_bg = "#1a1b26"         -- background
 theme.modebox_border = "#e0af68"     -- border color
 theme.modebox_border_width = 1       -- border width
 
+-- theme for hotkeys
+theme.hotkeys_modifiers_fg = "#e0af68"
+theme.hotkeys_border_color = "#7aa2f7"
+theme.hotkeys_font = "monospace 13"
+theme.hotkeys_description_font = "monospace 12"
+theme.hotkeys_group_margin = 1
+
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:
