@@ -68,4 +68,7 @@ export PUB_CACHE="$XDG_CACHE_HOME/pub"
 
 export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 
+# jupyter
+export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
+
 export GDBHISTFILE="$XDG_DATA_HOME"/gdb/history
