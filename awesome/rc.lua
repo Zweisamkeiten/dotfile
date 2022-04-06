@@ -321,9 +321,11 @@ root.buttons(gears.table.join(
 modalbind.init()
 local modmap = {
   { "e", function() awful.util.spawn(terminal .. " -e " .. "zsh -c '$HOME/.local/bin/lvim'") end, "Editor"},
+  { "f", function() awful.util.spawn("firefox") end, "Firefox"},
+  { "o", function() awful.util.spawn("obsidian") end, "Obsidian"},
   { "q", function() awful.util.spawn(terminal .. " -e " .. "zsh -c 'emacsclient -nc'") end, "Emacs"},
+  { "t", function() awful.util.spawn(terminal .. " -e " .. "tmux attach") end, "Tmux"},
   { "z", function() awful.util.spawn("zathura") end, "Zathura"},
-  { "f", function() awful.util.spawn(terminal .. " --command=" .. filemanager) end, "FileManager"},
   { "v", function()
     awful.util.spawn(terminal .. " --class=videodir" .. " -e " .. "zsh -c 'cd $(xdg-user-dir VIDEOS) && ranger --choosedir=$XDG_STATE_HOME/ranger/rangerdir'")
   end, "VideoDir"}
