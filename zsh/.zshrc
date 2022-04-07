@@ -208,7 +208,8 @@ HISTFILE=$XDG_STATE_HOME/zsh/.histfile
 #save only one command if 2 common are same and consistent
 #setopt HIST_IGNORE_DUPS
 #add timestamp for each entry
-#setopt EXTENDED_HISTORY
+setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
+setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
 # ------------------------------
 # Post-init module configuration
 # ------------------------------
