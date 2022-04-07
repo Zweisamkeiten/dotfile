@@ -40,6 +40,7 @@ alias rc.lua='lvim ~/.config/awesome/rc.lua'
 alias theme.lua='lvim ~/.config/awesome/theme.lua'
 
 alias headphone='pactl set-sink-port alsa_output.pci-0000_00_1f.3.analog-stereo analog-output-headphones'
+alias mic='pactl set-source-port alsa_input.pci-0000_00_1f.3.analog-stereo analog-input-headset-mic'
 alias speaker='pactl set-sink-port alsa_output.pci-0000_00_1f.3.analog-stereo analog-output-speaker'
 
 alias proxy='ALL_PROXY="socks://127.0.0.1:20170"'
