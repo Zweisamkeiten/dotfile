@@ -524,13 +524,13 @@ clientkeys = gears.table.join(
     -- User
     awful.key({ modkey, "Shift" }, "a",
         function ()
-            awful.spawn.with_shell("maim -s $HOME/m/i/screenshot/shot$(date +%F_%H-%M-%S).png")
+            awful.util.spawn("zsh -c 'maim -s $HOME/m/i/screenshot/shot$(date +%F_%H-%M-%S).png'")
         end ,
         {description = "screenshot", group = "user"}
       ),
     awful.key({ modkey, "Shift" }, "s",
         function ()
-            awful.spawn.with_shell("maim -s -u | xclip -selection clipboard -t image/png -i")
+            awful.util.spawn("zsh -c 'maim -s -u | xclip -selection clipboard -t image/png -i'")
         end ,
         {description = "screenshot", group = "user"}
       )
