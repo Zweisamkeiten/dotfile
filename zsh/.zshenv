@@ -72,3 +72,11 @@ export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
 
 export GDBHISTFILE="$XDG_DATA_HOME"/gdb/history
+
+# bundle
+ export BUNDLE_USER_CONFIG="$XDG_CONFIG_HOME"/bundle
+ export BUNDLE_USER_CACHE="$XDG_CACHE_HOME"/bundle
+ export BUNDLE_USER_PLUGIN="$XDG_DATA_HOME"/bundle
+
+ # ruby-solargraph
+ export SOLARGRAPH_CACHE=$XDG_CACHE_HOME/solargraph
