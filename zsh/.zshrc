@@ -211,6 +211,7 @@ HISTFILE=$XDG_STATE_HOME/zsh/.histfile
 #add timestamp for each entry
 setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
 setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
+unsetopt SHARE_HISTORY           # Cause all terminals to share the same history 'session', 隐含打开EXTENDED_HISTORY, INC_APPEND_HISTORY
 # ------------------------------
 # Post-init module configuration
 # ------------------------------
