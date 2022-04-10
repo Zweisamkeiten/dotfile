@@ -246,6 +246,6 @@ source /usr/share/fzf/completion.zsh
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 hist_filesize=$(stat -c%s "$XDG_STATE_HOME/zsh/.histfile")
 if [[ $hist_filesize -lt 64000 ]]; then
-    # echo "History file is lower than 64 kbytes, restoring backup..."
+    echo "History file is lower than 64 kbytes, restoring backup..."
     cp -f $HOME/p/backup/zsh/.histfile $XDG_STATE_HOME/zsh/.histfile
 fi
