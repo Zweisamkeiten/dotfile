@@ -55,6 +55,9 @@ alias adb="HOME=$XDG_DATA_HOME/adb adb"
 alias flutter="HOME=$XDG_DATA_HOME/flutter flutter"
 alias dart="HOME=$XDG_DATA_HOME/dart dart"
 
+#temp
+alias te="python ok --local"
+
 autoload -Uz compinit
 compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/zcompcache
@@ -244,8 +247,8 @@ source /usr/share/fzf/completion.zsh
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-hist_filesize=$(stat -c%s "$XDG_STATE_HOME/zsh/.histfile")
-if [[ $hist_filesize -lt 64000 ]]; then
-    echo "History file is lower than 64 kbytes, restoring backup..."
-    cp -f $HOME/p/backup/zsh/.histfile $XDG_STATE_HOME/zsh/.histfile
-fi
+# hist_filesize=$(stat -c%s "$XDG_STATE_HOME/zsh/.histfile")
+# if [[ $hist_filesize -lt 64000 ]]; then
+#     echo "History file is lower than 64 kbytes, restoring backup..."
+#     cp -f $HOME/p/backup/zsh/.histfile $XDG_STATE_HOME/zsh/.histfile
+# fi

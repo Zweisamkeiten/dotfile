@@ -3,7 +3,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
-export EDITOR="lvim"
+export EDITOR="vim"
 
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH=$HOME/c/b:$HOME/.local/bin:/usr/local/bin:/usr/bin:$PATH
@@ -54,6 +54,7 @@ export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
 export PATH=$JAVA_HOME/bin:$PATH
 
 # flutter mirror
+export FLUTTER_SDK="/opt/flutter/bin/"
 export FLUTTER_STORAGE_BASE_URL="https://mirrors.tuna.tsinghua.edu.cn/flutter"
 export PUB_HOSTED_URL="https://mirrors.tuna.tsinghua.edu.cn/dart-pub"
 export CHROME_EXECUTABLE="/usr/bin/chromium"
