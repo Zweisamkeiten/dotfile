@@ -84,6 +84,12 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 -- notification_[bg|fg]
 -- notification_[width|height|margin]
 -- notification_[border_color|border_width|shape|opacity]
+-- theme.notification_font = "monospace 18"
+theme.notification_fg = "#8af5ff"
+theme.notification_border_color = "#fa7883"
+theme.notification_opacity = 80
+-- theme.notification_margin = dpi(100)
+-- theme.notification_shape = gears.shape.rounded_rect(cr, 70, 70, 10)
 
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]

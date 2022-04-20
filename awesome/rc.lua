@@ -533,6 +533,17 @@ clientkeys = gears.table.join(
             awful.util.spawn("zsh -c 'maim -s -u | xclip -selection clipboard -t image/png -i'")
         end ,
         {description = "screenshot", group = "user"}
+      ),
+    awful.key({ modkey, "Shift" }, "t",
+        function ()
+            local noisy = [[zsh -c '
+            xclip -o | trans -b :zh -x 127.0.0.1:20171
+            ']]
+          awful.spawn.easy_async(noisy, function(stdout, stderr, reason, exit_code)
+              naughty.notify { timeout = 10, font = "monospace 18", position = "bottom_left", text = stdout, margin = 10 }
+          end)
+      end ,
+      {description = "screenshot", group = "user"}
       )
 )
 
@@ -637,7 +648,6 @@ awful.rules.rules = {
           "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
           "Wpa_gui",
           "veromix",
-          "scrcpy",
           "xtightvncviewer"},
 
         -- Note that the name property shown in xprop might be set slightly after creation of the client
@@ -671,7 +681,9 @@ awful.rules.rules = {
           "videodir"
         },
       },properties = { screen = 1, tag = awful.screen.focused().tags[4], switchtotag = true },
-    }
+    },
+
+    { rule = { class ="scrcpy" }, properties = { floating = true, ontop = true} },
 }
 -- }}}
 
