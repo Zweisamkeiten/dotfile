@@ -82,6 +82,10 @@ if [[ -a "$HOME/.w3m" ]]; then
   rm -rf $HOME/.w3m
 fi
 
+if [[ -a "$HOME/.python_history" ]]; then
+  rm $HOME/.python_history
+fi
+
 # Start configuration added by Zim install {{{
 #
 # User configuration sourced by interactive shells
