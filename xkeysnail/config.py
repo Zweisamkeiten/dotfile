@@ -151,7 +151,7 @@ define_keymap(re.compile("obsidian"), {
 }, "obsidian")
 
 # Emacs-like keybindings in non-Emacs applications
-define_keymap(lambda wm_class: wm_class not in ("Emacs", "URxvt", "Alacritty", "scrcpy"), {
+define_keymap(lambda wm_class: wm_class not in ("Emacs", "URxvt", "Alacritty", "scrcpy", "St"), {
     # Cursor
     K("C-b"): with_mark(K("left")),
     K("C-f"): with_mark(K("right")),

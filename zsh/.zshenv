@@ -81,3 +81,6 @@ export GDBHISTFILE="$XDG_DATA_HOME"/gdb/history
 
  # ruby-solargraph
  export SOLARGRAPH_CACHE=$XDG_CACHE_HOME/solargraph
+
+ # .mysql_history
+  export MYSQL_HISTFILE=$XDG_DATA_HOME/mysql_history

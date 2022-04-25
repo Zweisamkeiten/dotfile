@@ -53,9 +53,9 @@ end
 beautiful.init("/home/einsam/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-local terminal = "alacritty"
+local terminal = "st"
 local editor = os.getenv("EDITOR") or "vim"
-local editor_cmd = terminal .. " --command=" .. editor
+local editor_cmd = terminal .. " -e" .. editor
 local filemanager = "ranger"
 
 -- Default modkey.
@@ -285,7 +285,7 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", height = dpi(32), screen = s })
+    s.mywibox = awful.wibar({ opacity = 0.9, position = "top", height = dpi(32), screen = s })
 
     -- Add widgets to the wibox
     s.mywibox:setup {
@@ -327,7 +327,7 @@ local modmap = {
   { "t", function() awful.util.spawn(terminal .. " -e " .. "tmux attach") end, "Tmux"},
   { "z", function() awful.util.spawn("zathura") end, "Zathura"},
   { "v", function()
-    awful.util.spawn(terminal .. " --class=videodir" .. " -e " .. "zsh -c 'cd $(xdg-user-dir VIDEOS) && ranger --choosedir=$XDG_STATE_HOME/ranger/rangerdir'")
+    awful.util.spawn(terminal .. " -c videodir" .. " -e " .. "zsh -c 'cd $(xdg-user-dir VIDEOS) && ranger --choosedir=$XDG_STATE_HOME/ranger/rangerdir'")
   end, "VideoDir"}
 }
 
