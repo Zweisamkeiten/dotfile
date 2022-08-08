@@ -1,0 +1,7 @@
+[user]
+	email = snitxmhm@gmail.com
+	name = Einsam
+
+[alias]
+	last = cat-file commit HEAD
+	graph = log --all --graph --decorate --oneline

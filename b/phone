@@ -1,0 +1,10 @@
+#!/bin/bash
+
+DEFAULT_ROUTE=$(ip route show default | awk '/default/ {print $3}')
+JUDGE_IF_HOTSPOT=$(echo $DEFAULT_ROUTE | awk -F '.' '{ print $4 }')
+if [[ $JUDGE_IF_HOTSPOT = 1 ]]; then
+  HOME=$XDG_DATA_HOME/adb adb connect "192.168.3.66:5555"
+else
+  HOME=$XDG_DATA_HOME/adb adb connect "$DEFAULT_ROUTE:5555"
+fi
+nohup scrcpy --shortcut-mod lctrl --push-target /sdcard/Pictures >> /tmp/nohup.out &
