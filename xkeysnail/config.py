@@ -106,6 +106,7 @@ define_multipurpose_modmap({
     # Enter is enter when pressed and released. Control when held down.
     Key.ENTER: [Key.ENTER, Key.RIGHT_CTRL],
     Key.TAB: [Key.TAB, Key.RIGHT_ALT],
+    Key.LEFT_ALT: [Key.BACKSPACE, Key.LEFT_ALT],
 
     # Capslock is escape when pressed and released. Control when held down.
     Key.CAPSLOCK: [Key.ESC, Key.LEFT_CTRL],
@@ -149,6 +150,12 @@ define_keymap(re.compile("obsidian"), {
     K("C-s"): K("C-f"),
     K("C-semicolon"): K("C-p"),
 }, "obsidian")
+
+define_keymap(re.compile("Emacs"), {
+    # Ctrl+s to focus search area
+    K("F1"): K("C-h"),
+    K("C-h"): K("backspace"),
+}, "Emacs")
 
 # Emacs-like keybindings in non-Emacs applications
 define_keymap(lambda wm_class: wm_class not in ("Emacs", "URxvt", "Alacritty", "scrcpy", "St"), {
