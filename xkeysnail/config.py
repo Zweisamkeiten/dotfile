@@ -147,7 +147,7 @@ define_keymap(re.compile("obsidian"), {
     # Ctrl+s to focus search area
     K("C-t"): K("C-n"),
     K("C-o"): K("C-o"),
-    K("C-s"): K("C-f"),
+    K("C-s"): K("C-Shift-f"),
     K("C-semicolon"): K("C-p"),
 }, "obsidian")
 
