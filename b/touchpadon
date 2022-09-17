@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+xinput list | awk '/Touchpad/ {print $6}' | awk -F '=' '{print $2}' | xargs xinput --enable

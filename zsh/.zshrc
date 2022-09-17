@@ -26,8 +26,13 @@ alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 alias lg='lazygit'
 alias ra='ranger --choosedir=$XDG_STATE_HOME/ranger/rangerdir;cd "$(cat $XDG_STATE_HOME/ranger/rangerdir)"'
 alias netprocs='lsof -P -i -n'
-alias trans='trans en:zh -x 127.0.0.1:20171 -I'
+alias tg='trans en:zh -x 127.0.0.1:20171 -I'
+alias tb='trans en:zh -e bing -I'
 alias lxappearance='lxappearance ~/.config/gtk-3.0/settings.ini'
+
+# TouchPad
+alias touchpadoff='xinput list | awk "/Touchpad/ {print \$6}" | awk -F "=" "{print \$2}" | xargs xinput --disable'
+alias touchpadon='xinput list | awk "/Touchpad/ {print \$6}" | awk -F "=" "{print \$2}" | xargs xinput --enable'
 
 # Quick edit
 alias zshrc='lvim ~/.config/zsh/.zshrc'
