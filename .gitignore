@@ -24,3 +24,5 @@ mpd/playlists
 ranger/colorschemes/__pycache__
 ranger/plugins/__pycache__
 mpv/_cache
+
+ncmpcpp
