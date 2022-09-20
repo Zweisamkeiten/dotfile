@@ -5,9 +5,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 
 export EDITOR="vim"
 
-export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH=$HOME/c/b:$HOME/.local/bin:/usr/local/bin:/usr/bin:$PATH
-export PATH="$PATH:$GEM_HOME/bin"
 export PATH="/usr/lib/ccache/bin:$PATH"
 
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
@@ -29,6 +27,9 @@ export GEM_HOME="$XDG_DATA_HOME"/gem
 export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem
 export GEMRC="$XDG_CONFIG_HOME/gem/gemrc"
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
+
+export PATH="$PATH:$(ruby -e 'puts Gem.dir')/bin"
+export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 
 # zplug
 export ZPLUG_HOME="$XDG_CONFIG_HOME/zsh/zplug"
