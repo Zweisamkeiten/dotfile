@@ -5,3 +5,5 @@
 [alias]
 	last = cat-file commit HEAD
 	graph = log --all --graph --decorate --oneline
+[commit]
+	template = /home/einsam/.config/git/git-commit-template.txt
