@@ -1,1 +1,2 @@
-mpv/scripts/** linguist-vendored
+mpv/scripts/* linguist-vendored
+mpv/shaders/* linguist-vendored
