@@ -818,8 +818,8 @@ xkb_symbols "colemak" {
     key <AE12> { [        equal,         plus,        multiply,         division ] };
 
     key <AD01> { [            q,            Q,      adiaeresis,       adiaeresis ] };
-    key <AD02> { [            w,            W,           aring,            Aring ] };
-    key <AD03> { [            f,            F,          atilde,           Atilde ] };
+    key <AD02> { [            w,            W,           minus,            minus ] };
+    key <AD03> { [            f,            F,          plus,               plus ] };
     key <AD04> { [            p,            P,          oslash,         Ooblique ] };
     key <AD05> { [            g,            G,     dead_ogonek,       asciitilde ] };
     key <AD06> { [            j,            J,         dstroke,          Dstroke ] };
