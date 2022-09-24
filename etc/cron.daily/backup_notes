@@ -1,0 +1,2 @@
+#!/bin/sh
+rsync -a --delete --quiet -e ssh /home/einsam/d/notes pi:/srv/dev-disk-by-id-usb-WDC_WD40_EJRX-89T1XY0_00000000497C-0-0/backup/notes
