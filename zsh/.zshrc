@@ -91,6 +91,10 @@ if [[ -a "$HOME/.python_history" ]]; then
   rm $HOME/.python_history
 fi
 
+if [[ -a "$HOME/.yarnrc" ]]; then
+  rm $HOME/.yarnrc
+fi
+
 # Start configuration added by Zim install {{{
 #
 # User configuration sourced by interactive shells
