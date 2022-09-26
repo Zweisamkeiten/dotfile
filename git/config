@@ -5,5 +5,23 @@
 [alias]
 	last = cat-file commit HEAD
 	graph = log --all --graph --decorate --oneline
+
 [commit]
 	template = /home/einsam/.config/git/git-commit-template.txt
+
+[color]
+  ui = auto
+[color "branch"]
+  current = blue reverse
+  local = green
+  remote = yellow
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = red
+
