@@ -19,6 +19,7 @@ export HISTFILE="$XDG_STATE_HOME"/zsh/.histfile
 export GVIMINIT='let $MYGVIMRC="$XDG_CONFIG_HOME/vim/gvimrc" | source $MYGVIMRC'
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export GOPATH="$XDG_DATA_HOME"/go
+export PATH=$HOME/.local/share/npm/bin:$PATH
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 # export NPM_CONFIG_CACHE=$XDG_CACHE_HOME/npm
 # export NPM_CONFIG_TMP=$XDG_RUNTIME_DIR/npm
