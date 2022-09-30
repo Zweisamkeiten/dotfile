@@ -59,6 +59,7 @@ alias w3m="HOME=$XDG_DATA_HOME/w3m w3m"
 alias adb="HOME=$XDG_DATA_HOME/adb adb"
 alias flutter="HOME=$XDG_DATA_HOME/flutter flutter"
 alias dart="HOME=$XDG_DATA_HOME/dart dart"
+alias railway="HOME=$XDG_DATA_HOME/railway railway"
 
 #temp
 alias te="python ok --local"
