@@ -95,6 +95,9 @@ if [[ -a "$HOME/.yarnrc" ]]; then
   rm $HOME/.yarnrc
 fi
 
+if [[ -a "$HOME/.node_repl_history" ]]; then
+  rm $HOME/.node_repl_history
+fi
 # Start configuration added by Zim install {{{
 #
 # User configuration sourced by interactive shells
