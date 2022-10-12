@@ -183,6 +183,14 @@ define_keymap(
     "Emacs",
 )
 
+define_keymap(
+    re.compile("St"),
+    {
+        K("RM-h"): K("backspace"),
+    },
+    "Emacs",
+)
+
 # Emacs-like keybindings in non-Emacs applications
 define_keymap(
     lambda wm_class: wm_class not in ("Emacs", "URxvt", "Alacritty", "scrcpy", "St"),

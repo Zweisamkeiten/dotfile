@@ -17,7 +17,7 @@ fi
 # alias vim='lvim'
 alias e='lvim'
 alias vf='vim $(fzf --height=40%)'
-alias ef='lvim $(fzf)'
+alias ef='lvim $(fzf --height=40%)'
 
 alias s="neofetch"
 alias la="ls --color -alh -v"
@@ -26,8 +26,8 @@ alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 alias lg='lazygit'
 alias ra='ranger --choosedir=$XDG_STATE_HOME/ranger/rangerdir;cd "$(cat $XDG_STATE_HOME/ranger/rangerdir)"'
 alias netprocs='lsof -P -i -n'
-alias tg='trans en:zh -x 127.0.0.1:20171 -I'
-alias tb='trans en:zh -e bing -I'
+alias tg='trans en:zh -x 127.0.0.1:20171 -I -4'
+alias tb='trans en:zh -e bing -I -4'
 alias lxappearance='lxappearance ~/.config/gtk-3.0/settings.ini'
 
 # TouchPad
@@ -98,6 +98,10 @@ fi
 
 if [[ -a "$HOME/.node_repl_history" ]]; then
   rm $HOME/.node_repl_history
+fi
+
+if [[ -a "$HOME/.wget-hsts" ]]; then
+  rm $HOME/.wget-hsts
 fi
 # Start configuration added by Zim install {{{
 #

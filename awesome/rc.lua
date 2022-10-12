@@ -485,15 +485,8 @@ globalkeys = gears.table.join(
 clientkeys = gears.table.join(
   awful.key({ modkey, }, "f",
     function(c)
-      -- c.fullscreen = not c.fullscreen
-      c.fullscreen = true
-      c:raise()
-    end,
-    { description = "toggle fullscreen", group = "client" }),
-  awful.key({ modkey, "Shift" }, "f",
-    function(c)
-      -- c.fullscreen = not c.fullscreen
-      c.fullscreen = false
+      c.fullscreen = not c.fullscreen
+      -- c.fullscreen = true
       c:raise()
     end,
     { description = "toggle fullscreen", group = "client" }),
@@ -575,6 +568,12 @@ clientkeys = gears.table.join(
       end)
     end,
     { description = "screenshot", group = "user" }
+  ),
+  awful.key({ modkey, "Shift" }, "k",
+    function()
+      awful.util.spawn([[zsh -c 'betterlockscreen -l blur'  ]])
+    end,
+    { description = "lock screen", group = "user" }
   )
 )
 
