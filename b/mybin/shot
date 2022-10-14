@@ -1,0 +1,5 @@
+#!/bin/bash
+filename=shot$(date +%F_%H-%M-%S).png
+maim -s "$HOME/m/i/screenshot/$filename"
+adb push "$HOME/m/i/screenshot/$filename" sdcard/Pictures/
+adb shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/Pictures/"$filename"

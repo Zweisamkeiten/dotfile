@@ -7,6 +7,7 @@ export EDITOR="lvim"
 
 export PATH=$HOME/c/b:$HOME/.local/bin:/usr/local/bin:/usr/bin:$PATH
 export PATH="/usr/lib/ccache/bin:$PATH"
+export PATH=$HOME/c/b/mybin:$PATH
 
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 export XSERVERRC="$XDG_CONFIG_HOME/X11/xserverrc"

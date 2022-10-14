@@ -18,6 +18,7 @@ fi
 alias e='lvim'
 alias vf='vim $(fzf --height=40%)'
 alias ef='lvim $(fzf --height=40%)'
+alias emacs='emacsclient -nc $(fzf --height=40%)'
 
 alias s="neofetch"
 alias la="ls --color -alh -v"
