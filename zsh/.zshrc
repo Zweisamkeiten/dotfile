@@ -274,3 +274,11 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 #     echo "History file is lower than 64 kbytes, restoring backup..."
 #     cp -f $HOME/p/backup/zsh/.histfile $XDG_STATE_HOME/zsh/.histfile
 # fi
+
+clean_java() {
+  rsync -a $HOME/.android/. $XDG_DATA_HOME/android --remove-source-files
+  rm -rf $HOME/.android
+  rm -rf $HOME/.gradle/caches/
+  rsync -a $HOME/.gradle/. $XDG_DATA_HOME/gradle --remove-source-files
+  rm -rf $HOME/.gradle
+}

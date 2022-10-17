@@ -53,7 +53,6 @@ export ANDROID_SDK_HOME="$XDG_DATA_HOME/android"
 export NEMU_HOME=/home/einsam/p/ics2021/nemu
 export AM_HOME=/home/einsam/p/ics2021/abstract-machine
 
-export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
 export PATH=$JAVA_HOME/bin:$PATH
 
 # flutter mirror
