@@ -275,10 +275,17 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 #     cp -f $HOME/p/backup/zsh/.histfile $XDG_STATE_HOME/zsh/.histfile
 # fi
 
+# myfunction
+
 clean_java() {
   rsync -a $HOME/.android/. $XDG_DATA_HOME/android --remove-source-files
   rm -rf $HOME/.android
   rm -rf $HOME/.gradle/caches/
   rsync -a $HOME/.gradle/. $XDG_DATA_HOME/gradle --remove-source-files
   rm -rf $HOME/.gradle
+}
+
+ytd() {
+  url="$1"
+  youtube-dl $url  --proxy "http://127.0.0.1:20171" --external-downloader aria2c --external-downloader-args "-s64 -x64 -j 3 -k 1M" --no-playlist
 }

@@ -89,3 +89,6 @@ export MYSQL_HISTFILE=$XDG_DATA_HOME/mysql_history
 
 # kodi
 export KODI_DATA=$XDG_DATA_HOME/kodi
+
+# openjdk
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
