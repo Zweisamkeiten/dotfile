@@ -104,6 +104,10 @@ fi
 if [[ -a "$HOME/.wget-hsts" ]]; then
   rm $HOME/.wget-hsts
 fi
+
+if [[ -a "$HOME/.android" ]]; then
+  rm -rf $HOME/.android
+fi
 # Start configuration added by Zim install {{{
 #
 # User configuration sourced by interactive shells
