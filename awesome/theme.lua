@@ -12,8 +12,8 @@ local themes_path = gfs.get_themes_dir()
 local theme = {}
 
 theme.font          = "Sarasa UI SC 12"
-theme.taglist_font  = "Sarasa UI SC 24"
-theme.tasklist_font = "taglistfont 16"
+theme.taglist_font  = "Sarasa UI SC 20"
+theme.tasklist_font = "taglistfont 12"
 
 theme.bg_normal             = "#15161e"
 theme.bg_focus              = "#1a1b26"

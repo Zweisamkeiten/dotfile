@@ -120,7 +120,7 @@ end
 mykeyboardlayout = wibox.widget {
   {
     {
-      widget = keyboardlayout_with_font("Nothing You Could Do 18")
+      widget = keyboardlayout_with_font("Nothing You Could Do 16")
     },
     fg = "#5890f8", -- text color
     --  bg = "blue",
@@ -132,7 +132,7 @@ mykeyboardlayout = wibox.widget {
 }
 
 local markup = lain.util.markup
-local widget_font = 'Inconsolata Nerd Font 18'
+local widget_font = 'Inconsolata Nerd Font 16'
 
 local baticon = wibox.widget.textbox('')
 local bat = awful.widget.watch([[bash -c "echo $(cat /sys/class/power_supply/BAT0/capacity)"]], 60,
@@ -180,7 +180,7 @@ mynet = wibox.widget {
 mytextclock = wibox.widget {
   {
     {
-      widget = wibox.widget.textclock('<span color="#ffc387" font="Nothing You Could Do 18"> %a %b %d, %H:%M </span>')
+      widget = wibox.widget.textclock('<span color="#ffc387" font="Nothing You Could Do 16"> %a %b %d, %H:%M </span>')
     },
     --  bg = "blue",
     widget = wibox.container.background
@@ -328,6 +328,7 @@ local modmap = {
   { "q", function() awful.util.spawn(terminal .. " -e " .. "zsh -c 'emacsclient -nc'") end, "Emacs" },
   { "t", function() awful.util.spawn(terminal .. " -e " .. "tmux attach") end, "Tmux" },
   { "z", function() awful.util.spawn("zathura") end, "Zathura" },
+  { "s", function() awful.util.spawn([[zsh -c '~/c/b/mybin/shot']]) end, "send shot to phone" },
   { "v", function()
     awful.util.spawn(terminal ..
       " -c videodir" ..
