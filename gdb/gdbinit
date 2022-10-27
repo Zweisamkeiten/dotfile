@@ -12,3 +12,4 @@
 #   step
 #   refresh
 # end
+set debuginfod enabled off
