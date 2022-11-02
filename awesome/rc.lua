@@ -323,6 +323,7 @@ root.buttons(gears.table.join(
 modalbind.init()
 local modmap = {
   { "e", function() awful.util.spawn(terminal .. " -e " .. "zsh -c '$HOME/.local/bin/lvim'") end, "Editor" },
+  { "g", function() awful.util.spawn("gtkwave") end, "Gtkwave" },
   { "f", function() awful.util.spawn("firefox") end, "Firefox" },
   { "o", function() awful.util.spawn("obsidian") end, "Obsidian" },
   { "q", function() awful.util.spawn(terminal .. " -e " .. "zsh -c 'emacsclient -nc'") end, "Emacs" },

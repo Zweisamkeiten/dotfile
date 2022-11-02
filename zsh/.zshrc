@@ -21,6 +21,8 @@ alias ef='lvim $(fzf --height=40%)'
 alias emacs='emacsclient -nc $(fzf --height=40%)'
 
 alias s="neofetch"
+alias ht="htop"
+alias hi="history"
 alias la="ls --color -alh -v"
 alias ip='ip -color=auto'
 alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
@@ -29,6 +31,7 @@ alias ra='ranger --choosedir=$XDG_STATE_HOME/ranger/rangerdir;cd "$(cat $XDG_STA
 alias netprocs='lsof -P -i -n'
 alias tg='trans en:zh -x 127.0.0.1:20171 -I -4'
 alias tb='trans en:zh -e bing -I -4'
+alias tz='trans zh:en -I -4 -x 127.0.0.1:20171'
 alias lxappearance='lxappearance ~/.config/gtk-3.0/settings.ini'
 
 # TouchPad
@@ -52,7 +55,7 @@ alias speaker='pactl set-sink-port alsa_output.pci-0000_00_1f.3.analog-stereo an
 alias proxy='ALL_PROXY="socks://127.0.0.1:20170"'
 #alias gem='https_proxy="https//:127.0.0.1:20172" gem'
 
-alias colemak='systemctl --user restart xkeysnail.service && bash ~/c/b/keyboard.sh'
+alias cl='systemctl --user restart xkeysnail.service && bash ~/c/b/keyboard.sh'
 
 alias wget="wget --hsts-file="$XDG_CACHE_HOME/wget-hsts""
 # For those have not respected XDG Base Directory standard

@@ -50,8 +50,10 @@ export ANDROID_SDK_HOME="$XDG_DATA_HOME/android"
 #alias firefox-developer-edition="HOME=$XDG_DATA_HOME/firefoxdeveloperedition firefox-developer-edition"
 #alias chromium="HOME=$XDG_DATA_HOME/chromium chromium"
 
-export NEMU_HOME=/home/einsam/p/ics2021/nemu
-export AM_HOME=/home/einsam/p/ics2021/abstract-machine
+export NEMU_HOME=/home/einsam/p/ysyx-workbench/nemu
+export AM_HOME=/home/einsam/p/ysyx-workbench/abstract-machine
+export NPC_HOME=/home/einsam/p/ysyx-workbench/npc
+export NVBOARD_HOME=/home/einsam/p/ysyx-workbench/nvboard
 
 export PATH=$JAVA_HOME/bin:$PATH
 
