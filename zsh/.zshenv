@@ -6,7 +6,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export EDITOR="lvim"
 
 export PATH=$HOME/c/b:$HOME/.local/bin:/usr/local/bin:/usr/bin:$PATH
-export PATH="/usr/lib/ccache/bin:$PATH"
+export PATH="/usr/lib/ccache/bin":$PATH
 export PATH=$HOME/c/b/mybin:$PATH
 
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
@@ -54,8 +54,6 @@ export NEMU_HOME=/home/einsam/p/ysyx-workbench/nemu
 export AM_HOME=/home/einsam/p/ysyx-workbench/abstract-machine
 export NPC_HOME=/home/einsam/p/ysyx-workbench/npc
 export NVBOARD_HOME=/home/einsam/p/ysyx-workbench/nvboard
-
-export PATH=$JAVA_HOME/bin:$PATH
 
 # flutter mirror
 export FLUTTER_SDK="/opt/flutter/bin/"
