@@ -5,40 +5,42 @@ Xft.hintstyle:  hintfull
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
-Xcursor.size 45
+Xcursor.size: 10
+
+! TokyoNight colors for Xresources
 
 ! special
-*.foreground:   #cbe1e7
-*.background:   #171726
+*background: #1a1b26
+*foreground: #c0caf5
 
 ! black
-*.color0:       #22273d
-*.color8:       #525866
+*color0: #15161e
+*color8: #414868
 
 ! red
-*.color1:       #de5d6e
-*.color9:       #fa7883
+*color1: #f7768e
+*color9: #f7768e
 
 ! green
-*.color2:       #76a85d
-*.color10:      #98c379
+*color2: #9ece6a
+*color10: #9ece6a
 
 ! yellow
-*.color3:       #ff9470
-*.color11:      #ffc387
+*color3: #e0af68
+*color11: #e0af68
 
 ! blue
-*.color4:       #5890f8
-*.color12:      #6bb8ff
+*color4: #7aa2f7
+*color12: #7aa2f7
 
 ! magenta
-*.color5:       #c173d1
-*.color13:      #e799ff
+*color5: #bb9af7
+*color13: #bb9af7
 
 ! cyan
-*.color6:       #64b5a7
-*.color14:      #8af5ff
+*color6: #7dcfff
+*color14: #7dcfff
 
 ! white
-*.color7:       #a9b1d6
-*.color15:      #c0caf5
+*color7: #a9b1d6
+*color15: #c0caf5
