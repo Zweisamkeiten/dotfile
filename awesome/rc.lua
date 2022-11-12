@@ -323,7 +323,7 @@ root.buttons(gears.table.join(
 modalbind.init()
 local modmap = {
   { "e", function() awful.util.spawn(terminal .. " -e " .. "zsh -c '$HOME/.local/bin/lvim'") end, "Editor" },
-  { "g", function() awful.util.spawn("gtkwave") end, "Gtkwave" },
+  { "g", function() awful.spawn.with_shell("gtkwave") end, "Gtkwave" },
   { "f", function() awful.util.spawn("firefox") end, "Firefox" },
   { "o", function() awful.util.spawn("obsidian") end, "Obsidian" },
   { "q", function() awful.util.spawn(terminal .. " -e " .. "zsh -c 'emacsclient -nc'") end, "Emacs" },
@@ -456,7 +456,12 @@ globalkeys = gears.table.join(
     { description = "restore minimized", group = "client" }),
 
   -- Prompt
-  awful.key({ modkey }, "r", function() awful.screen.focused().mypromptbox:run() end,
+  -- awful.key({ modkey }, "r", function() awful.screen.focused().mypromptbox:run() end,
+  --   { description = "run prompt", group = "launcher" }),
+  awful.key({ modkey }, "r",
+    function()
+      awful.spawn.with_shell([[$XDG_CONFIG_HOME/rofi/launchers/type-1/launcher.sh]])
+    end,
     { description = "run prompt", group = "launcher" }),
   -- awful.key({ modkey },  "r",
   --           function ()
