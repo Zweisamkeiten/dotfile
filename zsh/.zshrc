@@ -65,7 +65,7 @@ alias flutter="HOME=$XDG_DATA_HOME/flutter flutter"
 alias dart="HOME=$XDG_DATA_HOME/dart dart"
 alias railway="HOME=$XDG_DATA_HOME/railway railway"
 
-alias dg="java -jar $HOME/p/ysyx-workbench/npc/resources/Digital/Digital.jar &"
+alias dg="HOME=$XDG_DATA_HOME/digital java -jar $HOME/p/ysyx-workbench/npc/resources/Digital/Digital.jar &"
 #temp
 alias te="python ok --local"
 
