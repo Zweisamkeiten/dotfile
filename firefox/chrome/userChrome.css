@@ -18,7 +18,7 @@
 
 /* Sidebar min and max width removal */
 #sidebar {
-	opacity: 0.8 !important
+	opacity: 0.8 !important;
 	max-width: none !important;
 	min-width: 0px !important;
 }
