@@ -18,6 +18,7 @@ fi
 alias e='lvim'
 alias vf='vim $(fzf --height=40%)'
 alias ef='lvim $(fzf --height=40%)'
+alias pf='fzf --bind "f1:execute(lvim -f {}),ctrl-y:execute-silent(echo {} | xclip -sel clip -i)+abort"'
 alias emacs='emacsclient -nc $(fzf --height=40%)'
 
 alias s="neofetch"
@@ -296,4 +297,18 @@ clean_java() {
 ytd() {
   url="$1"
   youtube-dl $url  --proxy "http://127.0.0.1:20171" --external-downloader aria2c --external-downloader-args "-s64 -x64 -j 3 -k 1M" --no-playlist
+}
+
+rga-fzf() {
+	RG_PREFIX="rga --files-with-matches"
+	local file
+	file="$(
+		FZF_DEFAULT_COMMAND="$RG_PREFIX '$1'" \
+			fzf --sort --preview="[[ ! -z {} ]] && rga --pretty --context 5 {q} {}" \
+				--phony -q "$1" \
+				--bind "change:reload:$RG_PREFIX {q}" \
+				--preview-window="70%:wrap"
+	)" &&
+	echo "opening $file" &&
+	xdg-open "$file"
 }
