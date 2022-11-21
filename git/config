@@ -9,6 +9,15 @@
 [commit]
 	template = /home/einsam/.config/git/git-commit-template.txt
 
+[difftool]
+    prompt = true
+
+[diff]
+  tool = nvimdiff
+
+[difftool "nvimdiff"]
+  cmd = "/home/einsam/.local/bin/lvim -d \"$LOCAL\" \"$REMOTE\""
+
 [color]
   ui = auto
 [color "branch"]
