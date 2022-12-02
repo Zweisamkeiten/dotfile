@@ -19,6 +19,8 @@ alias e='lvim'
 alias vf='vim $(fzf --height=40%)'
 alias ef='lvim $(fzf --height=40%)'
 alias pf='fzf --bind "f1:execute(lvim -f {}),ctrl-y:execute-silent(echo {} | xclip -sel clip -i)+abort"'
+alias za='bash ~/c/b/mybin/zathuara_history_rofi.sh'
+alias mb='bash $(fd . ~/c/b | fzf)'
 alias emacs='emacsclient -nc $(fzf --height=40%)'
 
 alias s="neofetch"
