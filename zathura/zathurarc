@@ -48,7 +48,7 @@ set completion-fg "#ABB2BF" #0C
 set notification-bg "#1e222a" #0B 复制后的通知栏背景
 set notification-fg "#c0caf5" #00 通知栏字体
 
-set recolor "true" # 颜色反转
+set recolor "false" # 颜色反转
 set recolor-lightcolor "#12151d" #00暗色模式背景颜色
 set recolor-darkcolor "#ABB2BF" #06 暗色模式字体颜色
 
@@ -59,6 +59,6 @@ set recolor-keephue "true" # 是否保持原色调当反转
 
 set render-loading "false" #是否显示"Loading"提示在反转颜色时
 set scroll-step 50
-unmap f
-map f toggle_fullscreen
-map [fullscreen] f toggle_fullscreen
+# unmap f
+# map f toggle_fullscreen
+# map [fullscreen] f toggle_fullscreen
