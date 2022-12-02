@@ -339,6 +339,17 @@ local modmap = {
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
+  -- Show/Hide Wibox
+  awful.key({ modkey }, "b", function ()
+    for s in screen do
+      s.mywibox.visible = not s.mywibox.visible
+      if s.mybottomwibox then
+        s.mybottomwibox.visible = not s.mybottomwibox.visible
+      end
+    end
+  end,
+    {description = "toggle wibox", group = "awesome"}),
+
   awful.key({ modkey }, "d",
     function()
       modalbind.grab { keymap = modmap, name = "modmap", stay_in_mode = true }

@@ -15,8 +15,8 @@ theme.font          = "Sarasa UI SC 12"
 theme.taglist_font  = "Sarasa UI SC 20"
 theme.tasklist_font = "taglistfont 12"
 
-theme.bg_normal             = "#15161e"
-theme.bg_focus              = "#1a1b26"
+theme.bg_normal             = "#0d1117"
+theme.bg_focus              = "#15161e"
 theme.bg_urgent             = "#f7768e"
 theme.bg_minimize           = "#171726"
 theme.prompt_bg             = "#414868"
@@ -41,7 +41,7 @@ theme.border_marked = "#fa7883"
 -- theme for modalbind
 theme.modalbind_font = "monospace 18" -- font
 theme.modebox_fg = "#7aa2f7" -- foreground
-theme.modebox_bg = "#1a1b26" -- background
+theme.modebox_bg = "#0d1117" -- background
 theme.modebox_border = "#e0af68" -- border color
 theme.modebox_border_width = 1 -- border width
 
@@ -130,7 +130,7 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path .. "default/titleb
 theme.titlebar_maximized_button_normal_active   = themes_path .. "default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active    = themes_path .. "default/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = "/home/einsam/t/wall/wallhaven-3zlm99_1920x1080.png"
+theme.wallpaper = "/home/einsam/t/wall/wallhaven-p93gm9_1920x1080.png"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh      = themes_path .. "default/layouts/fairhw.png"
