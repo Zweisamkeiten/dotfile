@@ -54,6 +54,8 @@ export NEMU_HOME=/home/einsam/p/ysyx-workbench/nemu
 export AM_HOME=/home/einsam/p/ysyx-workbench/abstract-machine
 export NPC_HOME=/home/einsam/p/ysyx-workbench/npc
 export NVBOARD_HOME=/home/einsam/p/ysyx-workbench/nvboard
+export NANOS_HOME=/home/einsam/p/ysyx-workbench/nanos-lite
+export NAVY_HOME=/home/einsam/p/ysyx-workbench/navy-apps
 
 # flutter mirror
 export FLUTTER_SDK="/opt/flutter/bin/"
@@ -98,3 +100,4 @@ export LUNARVIM_RUNTIME_DIR="${LUNARVIM_RUNTIME_DIR:-"/home/einsam/.local/share/
 export LUNARVIM_CONFIG_DIR="${LUNARVIM_CONFIG_DIR:-"/home/einsam/.config/lvim"}"
 export LUNARVIM_CACHE_DIR="${LUNARVIM_CACHE_DIR:-"/home/einsam/.cache/lvim"}"
 
+export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
