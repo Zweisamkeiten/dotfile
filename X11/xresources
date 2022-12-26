@@ -1,11 +1,12 @@
-Xft.dpi: 96
+Xft.dpi: 192
 Xft.autohint: 0
 Xft.lcdfilter:  lcddefault
 Xft.hintstyle:  hintfull
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
-Xcursor.size: 10
+Xcursor.theme: palenight
+Xcursor.size: 36
 
 ! TokyoNight colors for Xresources
 
@@ -27,8 +28,8 @@ Xcursor.size: 10
 *color10: #9ece6a
 
 ! yellow
-*color3: #e0af68
-*color11: #e0af68
+*color3: #d19a66
+*color11: #d19a66
 
 ! blue
 *color4: #7aa2f7
