@@ -21,6 +21,9 @@ alias ef='lvim $(fzf --height=40%)'
 alias pf='fzf --bind "f1:execute(lvim -f {}),ctrl-y:execute-silent(echo {} | xclip -sel clip -i)+abort"'
 alias za='bash ~/c/b/mybin/zathuara_history_rofi.sh'
 alias mb='bash $(fd . ~/c/b | fzf)'
+alias ta='tmux attach'
+alias f="fg %\$(echo \$(jobs | fzf --height=40%) | awk -F'[][]' '{print \$2}')"
+alias ts="tmux switch -t \$(echo \$(tmux list-windows -a | fzf --height=40%) | sed 's/: .*//g')"
 alias emacs='emacsclient -nc $(fzf --height=40%)'
 
 alias s="neofetch"
@@ -314,3 +317,24 @@ rga-fzf() {
 	echo "opening $file" &&
 	xdg-open "$file"
 }
+
+# Usage: palette
+palette() {
+    local -a colors
+    for i in {000..255}; do
+        colors+=("%F{$i}$i%f")
+    done
+    print -cP $colors
+}
+
+# Usage: printc COLOR_CODE
+printc() {
+    local color="%F{$1}"
+    echo -E ${(qqqq)${(%)color}}
+}
+
+# https://github.com/Aloxaf/fzf-tab/wiki/Configuration
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+# use 'alt-p' to go back and 'alt-n' to go forward
+zstyle ':fzf-tab:*' switch-group alt-p alt-n
+zstyle ':fzf-tab:*' prefix ''

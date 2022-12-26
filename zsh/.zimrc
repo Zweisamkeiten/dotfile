@@ -45,4 +45,8 @@ zmodule zsh-users/zsh-autosuggestions
 
 # zsh-z autojump
 zmodule https://github.com/agkozak/zsh-z
+
+# fzf-tab
+# Replace zsh's default completion selection menu with fzf!
+zmodule https://github.com/Aloxaf/fzf-tab
 # }}} End configuration added by Zim install
