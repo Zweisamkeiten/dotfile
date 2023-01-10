@@ -101,3 +101,6 @@ export LUNARVIM_CONFIG_DIR="${LUNARVIM_CONFIG_DIR:-"/home/einsam/.config/lvim"}"
 export LUNARVIM_CACHE_DIR="${LUNARVIM_CACHE_DIR:-"/home/einsam/.cache/lvim"}"
 
 export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
+
+# .gnupg
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
