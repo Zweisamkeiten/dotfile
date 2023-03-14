@@ -6,8 +6,8 @@
 	last = cat-file commit HEAD
 	graph = log --all --graph --decorate --oneline
 
-[commit]
-	template = /home/einsam/.config/git/git-commit-template.txt
+#[commit]
+  #template = /home/einsam/.config/git/git-commit-template.txt
 
 [difftool]
     prompt = true
@@ -33,4 +33,3 @@
   added = yellow
   changed = green
   untracked = red
-
