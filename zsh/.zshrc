@@ -39,6 +39,9 @@ alias tg='trans en:zh -x 127.0.0.1:20171 -I -4'
 alias tb='trans en:zh -e bing -I -4'
 alias tz='trans zh:en -I -4 -x 127.0.0.1:20171'
 alias lxappearance='lxappearance ~/.config/gtk-3.0/settings.ini'
+alias ydt='youtube-dl --external-downloader aria2c --external-downloader-args "-s128 -x128 -j 3 -k 1M"'
+alias na='navi'
+alias nam='zsh -c $(fzf --height=40%)'
 
 # TouchPad
 alias touchpadoff='xinput list | awk "/Touchpad/ {print \$6}" | awk -F "=" "{print \$2}" | xargs xinput --disable'
@@ -332,6 +335,39 @@ printc() {
     local color="%F{$1}"
     echo -E ${(qqqq)${(%)color}}
 }
+
+share() {
+  local file=$1
+  kdeconnect-cli --share=$file --device=8853dd24af9ea14a
+}
+
+zshhi() {
+  /bin/zsh $HOME/c/b/zsh_history.sh
+  fc -p
+  fc -R $XDG_STATE_HOME/zsh/.histfile
+}
+
+sp() {
+  echo "Enter message: "
+  read message
+  adb shell am broadcast -a ADB_INPUT_B64 --es msg `echo -n "$message" | base64`
+}
+
+if [ -n "$TMUX" ]; then
+  function refresh_env_var_from_systemd_started_tmux {
+    export $(tmux show-environment | grep "^DISPLAY")
+    export $(tmux show-environment | grep "^XAUTHORITY")
+  }
+else
+  function refresh_env_var_from_systemd_started_tmux { }
+fi
+
+function preexec {
+  refresh_env_var_from_systemd_started_tmux
+}
+
+# direnv
+eval "$(direnv hook zsh)"
 
 # https://github.com/Aloxaf/fzf-tab/wiki/Configuration
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup

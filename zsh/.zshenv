@@ -8,6 +8,7 @@ export EDITOR="lvim"
 export PATH=$HOME/c/b:$HOME/.local/bin:/usr/local/bin:/usr/bin:$PATH
 export PATH="/usr/lib/ccache/bin":$PATH
 export PATH=$HOME/c/b/mybin:$PATH
+export PATH="$XDG_DATA_HOME/cargo/bin":$PATH
 
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 export XSERVERRC="$XDG_CONFIG_HOME/X11/xserverrc"
@@ -56,6 +57,7 @@ export NPC_HOME=/home/einsam/p/ysyx-workbench/npc
 export NVBOARD_HOME=/home/einsam/p/ysyx-workbench/nvboard
 export NANOS_HOME=/home/einsam/p/ysyx-workbench/nanos-lite
 export NAVY_HOME=/home/einsam/p/ysyx-workbench/navy-apps
+export FCEUX_PATH=/home/einsam/p/ysyx-workbench/fceux-am
 
 # flutter mirror
 export FLUTTER_SDK="/opt/flutter/bin/"
