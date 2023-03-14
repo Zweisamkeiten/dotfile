@@ -8,11 +8,6 @@ zsh/.zhist*
 
 zsh/.zcompcache
 
-awesome/canvas.png
-awesome/small.png
-awesome/wallpaper.jpg
-awesome/wallpaper.png
-awesome/wp.jpg
 keepassxc/Passwords.kdbx
 b/changemac
 b/macaddress
@@ -27,3 +22,5 @@ mpv/_cache
 
 ncmpcpp
 fcitx5/conf/cached_layouts
+awesome/*.png
+awesome/*.jpg
