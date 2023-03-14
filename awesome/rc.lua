@@ -67,23 +67,23 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
+  awful.layout.suit.corner.nw,
   awful.layout.suit.tile,
   lain.layout.centerwork,
   awful.layout.suit.floating,
   awful.layout.suit.tile.left,
   awful.layout.suit.tile.bottom,
   awful.layout.suit.tile.top,
-  -- awful.layout.suit.fair,
-  -- awful.layout.suit.fair.horizontal,
-  -- awful.layout.suit.spiral,
-  -- awful.layout.suit.spiral.dwindle,
-  -- awful.layout.suit.max,
-  -- awful.layout.suit.max.fullscreen,
-  -- awful.layout.suit.magnifier,
-  -- awful.layout.suit.corner.nw,
-  -- awful.layout.suit.corner.ne,
-  -- awful.layout.suit.corner.sw,
-  -- awful.layout.suit.corner.se,
+  awful.layout.suit.fair,
+  awful.layout.suit.fair.horizontal,
+  awful.layout.suit.spiral,
+  awful.layout.suit.spiral.dwindle,
+  awful.layout.suit.max,
+  awful.layout.suit.max.fullscreen,
+  awful.layout.suit.magnifier,
+  awful.layout.suit.corner.ne,
+  awful.layout.suit.corner.sw,
+  awful.layout.suit.corner.se,
 }
 -- }}}
 
@@ -102,8 +102,22 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
 }
 })
 
-mylauncher = awful.widget.launcher({ image = "/home/einsam/.config/awesome/archlinux.svg",
-  menu = mymainmenu })
+container_arch_widget = {
+	{
+		{
+			text = "",
+			font = "monospace 36",
+			widget = wibox.widget.textbox,
+		},
+		left = 8,
+		right = 8,
+		top = 2,
+		bottom = 3,
+		widget = wibox.container.margin,
+	},
+	fg = "#f38ba8",
+	widget = wibox.container.background,
+}
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
@@ -122,12 +136,12 @@ mykeyboardlayout = wibox.widget {
     {
       widget = keyboardlayout_with_font("Nothing You Could Do 16")
     },
-    fg = "#5890f8", -- text color
+    fg = "#8caaee", -- text color
     --  bg = "blue",
     widget = wibox.container.background
   },
   bottom = 5,
-  color = "#7aa2f7",
+  color = "#85c1dc",
   widget = wibox.container.margin
 }
 
@@ -138,13 +152,13 @@ local baticon = wibox.widget.textbox('')
 local bat = awful.widget.watch([[bash -c "echo $(cat /sys/class/power_supply/BAT0/capacity)"]], 60,
   function(widget, stdout)
     local level = tonumber(stdout) // 25
-    if level == 0 then baticon:set_markup('<span color="#7dcfff" font="' .. widget_font .. '">  </span>') end
-    if level == 1 then baticon:set_markup('<span color="#7dcfff" font="' .. widget_font .. '">  </span>') end
-    if level == 2 then baticon:set_markup('<span color="#7dcfff" font="' .. widget_font .. '">  </span>') end
-    if level == 3 then baticon:set_markup('<span color="#7dcfff" font="' .. widget_font .. '">  </span>') end
-    if level == 4 then baticon:set_markup('<span color="#7dcfff" font="' .. widget_font .. '">  </span>') end
+    if level == 0 then baticon:set_markup('<span color="#a6d189" font="' .. widget_font .. '">  </span>') end
+    if level == 1 then baticon:set_markup('<span color="#a6d189" font="' .. widget_font .. '">  </span>') end
+    if level == 2 then baticon:set_markup('<span color="#a6d189" font="' .. widget_font .. '">  </span>') end
+    if level == 3 then baticon:set_markup('<span color="#a6d189" font="' .. widget_font .. '">  </span>') end
+    if level == 4 then baticon:set_markup('<span color="#a6d189" font="' .. widget_font .. '">  </span>') end
 
-    widget:set_markup('<span color="#7dcfff" font="' .. widget_font .. '">' .. stdout .. '%</span> ')
+    widget:set_markup('<span color="#a6d189" font="' .. widget_font .. '">' .. stdout .. '%</span> ')
   end)
 mybat = wibox.widget {
   {
@@ -154,23 +168,23 @@ mybat = wibox.widget {
     bat,
   },
   bottom = 5,
-  color = "#7dcfff",
+  color = "#a6d189",
   widget = wibox.container.margin
 }
 
 local net = lain.widget.net({
   settings = function()
-    widget:set_markup(markup.font(widget_font, markup.font(widget_font, markup("#ddffa7", "")) ..
-      markup("#ddffa7", " " .. string.format("%4.1f", net_now.received) .. "KB/s")
+    widget:set_markup(markup.font(widget_font, markup.font(widget_font, markup("#81c8be", "")) ..
+      markup("#81c8be", " " .. string.format("%4.1f", net_now.received) .. "KB/s")
       .. " " ..
       markup.font(widget_font, markup("#f07178", "")) ..
-      markup("#f07178", " " .. string.format("%4.1f", net_now.sent) .. "KB/s ")))
+      markup("#e78284", " " .. string.format("%4.1f", net_now.sent) .. "KB/s ")))
   end
 })
 mynet = wibox.widget {
   net,
   bottom = 5,
-  color = "#bb9af7",
+  color = "#babbf1",
   widget = wibox.container.margin
 }
 
@@ -180,13 +194,13 @@ mynet = wibox.widget {
 mytextclock = wibox.widget {
   {
     {
-      widget = wibox.widget.textclock('<span color="#ffc387" font="Nothing You Could Do 16"> %a %b %d, %H:%M </span>')
+      widget = wibox.widget.textclock('<span color="#e5c890" font="Nothing You Could Do 16"> %a %b %d, %H:%M </span>')
     },
     --  bg = "blue",
     widget = wibox.container.background
   },
   bottom = 5,
-  color = "#ffc387",
+  color = "#e5c890",
   widget = wibox.container.margin
 }
 
@@ -266,7 +280,9 @@ awful.screen.connect_for_each_screen(function(s)
   s.mypromptbox = awful.widget.prompt()
   -- Create an imagebox widget which will contain an icon indicating which layout we're using.
   -- We need one layoutbox per screen.
-  s.mylayoutbox = awful.widget.layoutbox(s)
+  s.mylayoutbox = awful.widget.layoutbox {
+    screen = s,
+  }
   s.mylayoutbox:buttons(gears.table.join(
     awful.button({}, 1, function() awful.layout.inc(1) end),
     awful.button({}, 3, function() awful.layout.inc(-1) end),
@@ -279,28 +295,35 @@ awful.screen.connect_for_each_screen(function(s)
     buttons = taglist_buttons
   }
 
-  -- Create a tasklist widget
-  s.mytasklist = awful.widget.tasklist {
-    screen  = s,
-    filter  = awful.widget.tasklist.filter.currenttags,
-    buttons = tasklist_buttons
-  }
+-- local widget_fg = "#a6adc8"
+s.mytasklist = awful.widget.tasklist({
+		screen = s,
+		filter = awful.widget.tasklist.filter.currenttags,
+		style = {
+			shape = gears.shape.rounded_bar,
+		},
+		layout = {
+			spacing = 10,
+			layout = wibox.layout.fixed.horizontal,
+		},
+	})
 
   -- Create the wibox
-  s.mywibox = awful.wibar({ opacity = 0.85, position = "top", height = dpi(32), screen = s })
+  s.mywibox = awful.wibar({ opacity = 0.78, position = "top", height = dpi(32), screen = s })
 
   -- Add widgets to the wibox
   s.mywibox:setup {
     layout = wibox.layout.align.horizontal,
     { -- Left widgets
       layout = wibox.layout.fixed.horizontal,
-      mylauncher,
+      container_arch_widget,
       s.mytaglist,
       s.mypromptbox,
     },
-    s.mytasklist, -- Middle widget
+    wibox.container.margin(s.mytasklist, 10, 10), -- Middle widget
     { -- Right widgets
       layout = wibox.layout.fixed.horizontal,
+      spacing = 10,
       mynet,
       mybat,
       mykeyboardlayout,
@@ -339,8 +362,8 @@ local modmap = {
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
-  -- Show/Hide Wibox
-  awful.key({ modkey }, "b", function ()
+-- Show/Hide Wibox
+  awful.key({ modkey }, "b", function()
     for s in screen do
       s.mywibox.visible = not s.mywibox.visible
       if s.mybottomwibox then
@@ -717,8 +740,8 @@ awful.rules.rules = {
   },
 
   -- Set Firefox to always map on the tag named "2" on screen 1.
-  { rule = { class = "firefoxdeveloperedition" },
-    properties = { screen = 1, tag = awful.screen.focused().tags[2], switchtotag = true } },
+  -- { rule = { class = "firefoxdeveloperedition" },
+  --   properties = { screen = 1, tag = awful.screen.focused().tags[2], switchtotag = true } },
 
   -- Set icaliigua to always map on the tag index 9 on screen focused now.
   { rule = { class = "icalingua" },
@@ -733,6 +756,13 @@ awful.rules.rules = {
   },
 
   { rule = { class = "scrcpy" }, properties = { floating = true, ontop = true } },
+
+  { rule = { class = "sdlpal" },
+    properties = { floating = true },
+    callback = function(c)
+      c:geometry({ width = 1920, height = 1080 })
+    end
+  },
 }
 -- }}}
 

@@ -12,8 +12,8 @@ local themes_path = gfs.get_themes_dir()
 local theme = {}
 
 theme.font          = "Sarasa UI SC 12"
-theme.taglist_font  = "Sarasa UI SC 20"
-theme.tasklist_font = "taglistfont 12"
+theme.taglist_font  = "Sarasa UI SC 24"
+theme.tasklist_font = "taglistfont 14"
 
 theme.bg_normal             = "#0d1117"
 theme.bg_focus              = "#15161e"
@@ -29,12 +29,14 @@ theme.fg_focus           = "#5890f8"
 theme.fg_urgent          = "#ffffff"
 theme.fg_minimize        = "#ffffff"
 theme.prompt_fg          = "#5890f8"
-theme.tasklist_fg_focus  = "#7aa2f7"
-theme.tasklist_fg_normal = "#c0caf5"
+theme.tasklist_fg_focus  = "#e5c890"
+theme.tasklist_fg_normal = "#626880"
+theme.tasklist_bg_focus  = "#232634"
+theme.tasklist_bg_normal = "#0d1117"
 
 theme.useless_gap   = dpi(2)
-theme.border_width  = dpi(0)
-theme.border_normal = "#e0af68"
+theme.border_width  = dpi(2)
+theme.border_normal = "#000000"
 theme.border_focus  = "#7aa2f7"
 theme.border_marked = "#fa7883"
 
@@ -67,10 +69,10 @@ theme.hotkeys_group_margin = 1
 
 -- Generate taglist squares:
 local taglist_square_size = dpi(6)
-theme.taglist_spacing = dpi(8)
-theme.taglist_fg_empty = "#bb9af7"
+theme.taglist_spacing = dpi(10)
+theme.taglist_fg_empty = "#292c3c"
 theme.taglist_fg_focus = "#8af5ff"
-theme.taglist_fg_occupied = "#ffc387"
+theme.taglist_fg_occupied = "#f2d5cf"
 theme.taglist_fg_urgent = "#fa7883"
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
     taglist_square_size, theme.taglist_fg_focus
@@ -130,25 +132,27 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path .. "default/titleb
 theme.titlebar_maximized_button_normal_active   = themes_path .. "default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active    = themes_path .. "default/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = "/home/einsam/t/wall/wallhaven-p93gm9_1920x1080.png"
+theme.wallpaper = "/home/einsam/t/wallhaven-5g7jp9_3840x2160.png"
 
 -- You can use your own layout icons like this:
-theme.layout_fairh      = themes_path .. "default/layouts/fairhw.png"
-theme.layout_fairv      = themes_path .. "default/layouts/fairvw.png"
-theme.layout_floating   = themes_path .. "default/layouts/floatingw.png"
-theme.layout_magnifier  = themes_path .. "default/layouts/magnifierw.png"
-theme.layout_max        = themes_path .. "default/layouts/maxw.png"
-theme.layout_fullscreen = themes_path .. "default/layouts/fullscreenw.png"
-theme.layout_tilebottom = themes_path .. "default/layouts/tilebottomw.png"
-theme.layout_tileleft   = themes_path .. "default/layouts/tileleftw.png"
-theme.layout_tile       = themes_path .. "default/layouts/tilew.png"
-theme.layout_tiletop    = themes_path .. "default/layouts/tiletopw.png"
-theme.layout_spiral     = themes_path .. "default/layouts/spiralw.png"
-theme.layout_dwindle    = themes_path .. "default/layouts/dwindlew.png"
-theme.layout_cornernw   = themes_path .. "default/layouts/cornernww.png"
-theme.layout_cornerne   = themes_path .. "default/layouts/cornernew.png"
-theme.layout_cornersw   = themes_path .. "default/layouts/cornersww.png"
-theme.layout_cornerse   = themes_path .. "default/layouts/cornersew.png"
+local gcolor = require("gears.color")
+theme.layout_fg = "#f38ba8"
+theme.layout_fairh      = gcolor.recolor_image(themes_path .. "default/layouts/fairhw.png", theme.layout_fg)
+theme.layout_fairv      = gcolor.recolor_image(themes_path .. "default/layouts/fairvw.png", theme.layout_fg)
+theme.layout_floating   = gcolor.recolor_image(themes_path .. "default/layouts/floatingw.png", theme.layout_fg)
+theme.layout_magnifier  = gcolor.recolor_image(themes_path .. "default/layouts/magnifierw.png", theme.layout_fg)
+theme.layout_max        = gcolor.recolor_image(themes_path .. "default/layouts/maxw.png", theme.layout_fg)
+theme.layout_fullscreen = gcolor.recolor_image(themes_path .. "default/layouts/fullscreenw.png", theme.layout_fg)
+theme.layout_tilebottom = gcolor.recolor_image(themes_path .. "default/layouts/tilebottomw.png", theme.layout_fg)
+theme.layout_tileleft   = gcolor.recolor_image(themes_path .. "default/layouts/tileleftw.png", theme.layout_fg)
+theme.layout_tile       = gcolor.recolor_image(themes_path .. "default/layouts/tilew.png", theme.layout_fg)
+theme.layout_tiletop    = gcolor.recolor_image(themes_path .. "default/layouts/tiletopw.png", theme.layout_fg)
+theme.layout_spiral     = gcolor.recolor_image(themes_path .. "default/layouts/spiralw.png", theme.layout_fg)
+theme.layout_dwindle    = gcolor.recolor_image(themes_path .. "default/layouts/dwindlew.png", theme.layout_fg)
+theme.layout_cornernw   = gcolor.recolor_image(themes_path .. "default/layouts/cornernww.png", theme.layout_fg)
+theme.layout_cornerne   = gcolor.recolor_image(themes_path .. "default/layouts/cornernew.png", theme.layout_fg)
+theme.layout_cornersw   = gcolor.recolor_image(themes_path .. "default/layouts/cornersww.png", theme.layout_fg)
+theme.layout_cornerse   = gcolor.recolor_image(themes_path .. "default/layouts/cornersew.png", theme.layout_fg)
 
 -- Generate Awesome icon:
 theme.awesome_icon = theme_assets.awesome_icon(
