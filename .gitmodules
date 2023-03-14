@@ -13,3 +13,6 @@
 [submodule "doom-emacs"]
 	path = doom-emacs
 	url = https://github.com/Zweisamkeiten/doom-emacs
+[submodule "awesome/bling"]
+	path = awesome/bling
+	url = https://ghproxy.com/github.com/BlingCorp/bling.git
