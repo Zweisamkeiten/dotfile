@@ -18,6 +18,8 @@ gui:
         - reverse
       selectedRangeBgColor:
         - reverse
+      unstagedChangesColor:
+        - red # Red
     commitLength:
       show: true
     mouseEvents: true
