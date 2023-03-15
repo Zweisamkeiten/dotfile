@@ -13,7 +13,7 @@ local theme = {}
 
 theme.font          = "Sarasa UI SC 12"
 theme.taglist_font  = "Sarasa UI SC 24"
-theme.tasklist_font = "taglistfont 14"
+theme.tasklist_font = "monospace 14"
 
 theme.bg_normal             = "#0d1117"
 theme.bg_focus              = "#15161e"

@@ -103,20 +103,20 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
 })
 
 container_arch_widget = {
-	{
-		{
-			text = "",
-			font = "monospace 36",
-			widget = wibox.widget.textbox,
-		},
-		left = 8,
-		right = 8,
-		top = 2,
-		bottom = 3,
-		widget = wibox.container.margin,
-	},
-	fg = "#f38ba8",
-	widget = wibox.container.background,
+  {
+    {
+      text = "",
+      font = "monospace 36",
+      widget = wibox.widget.textbox,
+    },
+    left = 8,
+    right = 8,
+    top = 6,
+    bottom = 6,
+    widget = wibox.container.margin,
+  },
+  fg = "#f38ba8",
+  widget = wibox.container.background,
 }
 
 -- Menubar configuration
@@ -140,7 +140,7 @@ mykeyboardlayout = wibox.widget {
     --  bg = "blue",
     widget = wibox.container.background
   },
-  bottom = 5,
+  bottom = 0,
   color = "#85c1dc",
   widget = wibox.container.margin
 }
@@ -167,7 +167,7 @@ mybat = wibox.widget {
     baticon,
     bat,
   },
-  bottom = 5,
+  bottom = 0,
   color = "#a6d189",
   widget = wibox.container.margin
 }
@@ -183,7 +183,7 @@ local net = lain.widget.net({
 })
 mynet = wibox.widget {
   net,
-  bottom = 5,
+  bottom = 0,
   color = "#babbf1",
   widget = wibox.container.margin
 }
@@ -199,20 +199,10 @@ mytextclock = wibox.widget {
     --  bg = "blue",
     widget = wibox.container.background
   },
-  bottom = 5,
+  bottom = 0,
   color = "#e5c890",
   widget = wibox.container.margin
 }
-
-
--- Create a systray widget
-mysystray = wibox.widget {
-  wibox.widget.systray(),
-  bottom = 5,
-  color = "#f7768e",
-  widget = wibox.container.margin
-}
--- mysystray:set_base_size(30)
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -266,6 +256,145 @@ local function set_wallpaper(s)
   end
 end
 
+local container_mybat_widget = {
+  {
+    {
+      {
+        {
+          {
+            widget = mybat,
+          },
+          layout = wibox.layout.fixed.horizontal
+        },
+        left   = 12,
+        right  = 12,
+        top    = 2,
+        bottom = 2,
+        widget = wibox.container.margin
+      },
+      shape  = gears.shape.rounded_bar,
+      fg     = "#b4befe",
+      bg     = "#232634",
+      widget = wibox.container.background
+    },
+    left   = 5,
+    right  = 5,
+    top    = 5,
+    bottom = 5,
+    widget = wibox.container.margin
+  },
+  spacing = 0,
+  layout  = wibox.layout.fixed.horizontal,
+}
+
+local container_mykeyboard_widget = {
+  {
+    {
+      {
+        {
+          {
+            text   = "",
+            font   = "monospace 36",
+            widget = wibox.widget.textbox,
+          },
+          {
+            widget = mykeyboardlayout,
+          },
+          layout = wibox.layout.fixed.horizontal
+        },
+        left   = 12,
+        right  = 12,
+        top    = 2,
+        bottom = 2,
+        widget = wibox.container.margin
+      },
+      shape  = gears.shape.rounded_bar,
+      fg     = "#8caaee",
+      bg     = "#232634",
+      widget = wibox.container.background
+    },
+    left   = 5,
+    right  = 5,
+    top    = 5,
+    bottom = 5,
+    widget = wibox.container.margin
+  },
+  spacing = 0,
+  layout  = wibox.layout.fixed.horizontal,
+}
+
+local container_mynet_widget = {
+  {
+    {
+      {
+        {
+          {
+            text   = "󰓅 ",
+            font   = "monospace 30",
+            widget = wibox.widget.textbox,
+          },
+          {
+            widget = mynet,
+          },
+          layout = wibox.layout.fixed.horizontal
+        },
+        left   = 12,
+        right  = 12,
+        top    = 2,
+        bottom = 2,
+        widget = wibox.container.margin
+      },
+      shape  = gears.shape.rounded_bar,
+      fg     = "#85c1dc",
+      bg     = "#232634",
+      widget = wibox.container.background
+    },
+    left   = 5,
+    right  = 5,
+    top    = 5,
+    bottom = 5,
+    widget = wibox.container.margin
+  },
+  spacing = 0,
+  layout  = wibox.layout.fixed.horizontal,
+}
+
+local container_mytextclock_widget = {
+  {
+    {
+      {
+        {
+          {
+            text   = "",
+            font   = "monospace 24",
+            widget = wibox.widget.textbox,
+          },
+          {
+            widget = mytextclock,
+          },
+          layout = wibox.layout.fixed.horizontal
+        },
+        left   = 12,
+        right  = 12,
+        top    = 2,
+        bottom = 2,
+        widget = wibox.container.margin
+      },
+      shape  = gears.shape.rounded_bar,
+      fg     = "#e5c890",
+      bg     = "#232634",
+      widget = wibox.container.background
+    },
+    left   = 5,
+    right  = 5,
+    top    = 5,
+    bottom = 5,
+    widget = wibox.container.margin
+  },
+  spacing = 0,
+  layout  = wibox.layout.fixed.horizontal,
+}
+
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
@@ -274,7 +403,7 @@ awful.screen.connect_for_each_screen(function(s)
   set_wallpaper(s)
 
   -- Each screen has its own tag table.
-  awful.tag({ "", "", "", "", "", "", "", "", "" }, s, awful.layout.layouts[1])
+  awful.tag({ "", "", "", "", --[[ "", "", "", "", ]] "" }, s, awful.layout.layouts[1])
 
   -- Create a promptbox for each screen
   s.mypromptbox = awful.widget.prompt()
@@ -295,18 +424,38 @@ awful.screen.connect_for_each_screen(function(s)
     buttons = taglist_buttons
   }
 
--- local widget_fg = "#a6adc8"
-s.mytasklist = awful.widget.tasklist({
-		screen = s,
-		filter = awful.widget.tasklist.filter.currenttags,
-		style = {
-			shape = gears.shape.rounded_bar,
-		},
-		layout = {
-			spacing = 10,
-			layout = wibox.layout.fixed.horizontal,
-		},
-	})
+  -- local widget_fg = "#a6adc8"
+  s.mytasklist = awful.widget.tasklist({
+    screen  = s,
+    filter  = awful.widget.tasklist.filter.currenttags,
+    buttons = tasklist_buttons,
+    style   = {
+      shape = gears.shape.rounded_bar,
+    },
+    layout  = {
+      spacing        = 10,
+      spacing_widget = {
+        {
+          forced_width = 5,
+          shape        = gears.shape.circle,
+          widget       = wibox.widget.separator
+        },
+        valign = 'center',
+        halign = 'center',
+        widget = wibox.container.place,
+      },
+      layout         = wibox.layout.flex.horizontal
+    },
+  })
+
+  -- Create a systray widget
+  s.mysystray = wibox.widget {
+    wibox.widget.systray(),
+    bottom = 0,
+    color = "#f7768e",
+    widget = wibox.container.margin
+  }
+  -- mysystray:set_base_size(30)
 
   -- Create the wibox
   s.mywibox = awful.wibar({ opacity = 0.78, position = "top", height = dpi(32), screen = s })
@@ -320,15 +469,14 @@ s.mytasklist = awful.widget.tasklist({
       s.mytaglist,
       s.mypromptbox,
     },
-    wibox.container.margin(s.mytasklist, 10, 10), -- Middle widget
+    wibox.container.margin(s.mytasklist, 10, 10, 5, 5), -- Middle widget
     { -- Right widgets
       layout = wibox.layout.fixed.horizontal,
-      spacing = 10,
-      mynet,
-      mybat,
-      mykeyboardlayout,
-      mysystray,
-      mytextclock,
+      container_mynet_widget,
+      container_mybat_widget,
+      container_mykeyboard_widget,
+      container_mytextclock_widget,
+      s.mysystray,
       s.mylayoutbox,
     },
   }
@@ -371,7 +519,7 @@ globalkeys = gears.table.join(
       end
     end
   end,
-    {description = "toggle wibox", group = "awesome"}),
+    { description = "toggle wibox", group = "awesome" }),
 
   awful.key({ modkey }, "d",
     function()
