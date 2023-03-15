@@ -25,6 +25,7 @@ alias ta='tmux attach'
 alias f="fg %\$(echo \$(jobs | fzf --height=40%) | awk -F'[][]' '{print \$2}')"
 alias ts="tmux switch -t \$(echo \$(tmux list-windows -a | fzf --height=40%) | sed 's/: .*//g')"
 alias emacs='emacsclient -nc $(fzf --height=40%)'
+alias tl="tldr --source=https://ghproxy.com/raw.githubusercontent.com/tldr-pages/tldr/master/pages"
 
 alias s="neofetch"
 alias ht="htop"
@@ -351,6 +352,13 @@ sp() {
   echo "Enter message: "
   read message
   adb shell am broadcast -a ADB_INPUT_B64 --es msg `echo -n "$message" | base64`
+}
+
+rnw() {
+  WM_NAME=`xprop WM_NAME | sed -r "s/.*\"(.+)\".*/\1/g"`
+  echo "Enter new name: "
+  newname=`bash -c 'read -e newname;echo $newname'`
+  xdotool search --name "$WM_NAME" set_window --name "$newname"
 }
 
 if [ -n "$TMUX" ]; then
