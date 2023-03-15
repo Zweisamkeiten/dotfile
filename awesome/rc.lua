@@ -573,8 +573,16 @@ globalkeys = gears.table.join(
       if client.focus then client.focus:raise() end
     end,
     { description = "focus right", group = "client" }),
-  awful.key({ modkey, }, "w", function() mymainmenu:show() end,
-    { description = "show main menu", group = "awesome" }),
+  awful.key({ modkey }, "w",
+    function()
+      awful.spawn.with_shell([[$XDG_CONFIG_HOME/rofi/scripts/window_swith.sh]])
+    end,
+    { description = "run prompt", group = "launcher" }),
+  awful.key({ modkey }, "q",
+    function()
+      awful.spawn.with_shell([[$XDG_CONFIG_HOME/rofi/scripts/powermenu_t1]])
+    end,
+    { description = "powermenu", group = "launcher" }),
 
   -- Layout manipulation
   awful.key({ modkey, "Shift" }, "e", function() awful.client.swap.byidx(1) end,

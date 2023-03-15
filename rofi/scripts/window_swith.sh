@@ -1,0 +1,1 @@
+../launchers/type-1/window_swith.sh
