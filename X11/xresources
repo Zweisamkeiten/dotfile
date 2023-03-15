@@ -13,7 +13,7 @@ Xcursor.theme: palenight
 
 ! special
 !*background: #1a1b26
-*background: #0d1117
+*background: #11111b
 *foreground: #c0caf5
 
 ! black
@@ -25,12 +25,12 @@ Xcursor.theme: palenight
 *color9: #f7768e
 
 ! green
-*color2: #a6d189
-*color10: #a6d189
+*color2: #a6e3a1
+*color10: #a6e3a1
 
 ! yellow
-*color3: #e5c890
-*color11: #e5c890
+*color3: #f9e2af
+*color11: #f9e2af
 
 ! blue
 *color4: #7aa2f7
