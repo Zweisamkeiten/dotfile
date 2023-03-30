@@ -116,7 +116,7 @@ define_multipurpose_modmap(
         Key.TAB: [Key.TAB, Key.RIGHT_ALT],
         Key.LEFT_ALT: [Key.BACKSPACE, Key.LEFT_ALT],
         # Capslock is escape when pressed and released. Control when held down.
-        Key.CAPSLOCK: [Key.ESC, Key.LEFT_CTRL],
+        Key.CAPSLOCK: [Key.ESC, Key.RIGHT_CTRL],
         # To use this example, you can't remap capslock with define_modmap.
     }
 )
@@ -178,7 +178,9 @@ define_keymap(
     {
         # Ctrl+s to focus search area
         K("F1"): K("C-h"),
-        K("C-h"): K("backspace"),
+        K("RC-h"): K("backspace"),
+        K("RC-p"): with_mark(K("up")),
+        K("RC-n"): with_mark(K("down")),
     },
     "Emacs",
 )
