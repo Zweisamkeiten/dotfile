@@ -18,7 +18,7 @@ fi
 alias e='lvim'
 alias vf='vim $(fzf --height=40%)'
 alias ef='lvim $(fzf --height=40%)'
-alias pf='fzf --bind "f1:execute(lvim -f {}),ctrl-y:execute-silent(echo {} | xclip -sel clip -i)+abort"'
+alias pf='fzf --bind "f1:execute(lvim -f {}),ctrl-y:execute-silent(echo {} | xclip -sel clip -i)+abort,ctrl-alt-y:execute-silent(xclip -selection clipboard {})+abort"'
 alias za='bash ~/c/b/mybin/zathuara_history_rofi.sh'
 alias mb='bash $(fd . ~/c/b | fzf)'
 alias ta='tmux attach'
@@ -387,3 +387,6 @@ zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 # use 'alt-p' to go back and 'alt-n' to go forward
 zstyle ':fzf-tab:*' switch-group alt-p alt-n
 zstyle ':fzf-tab:*' prefix ''
+
+# 在 zshrc 的最后生效, 打印所有 shell 函数 去掉前导下划线
+alias paf="print -l ${(ok)functions[(I)[^_]*]} | fzf"
