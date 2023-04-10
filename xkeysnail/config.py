@@ -105,6 +105,12 @@ define_conditional_modmap(
         Key.RIGHT_CTRL: Key.ESC,
     },
 )
+define_conditional_multipurpose_modmap(
+    re.compile(r"Emacs"),
+    {
+        Key.CAPSLOCK: [Key.ESC, Key.RIGHT_CTRL],
+    },
+)
 
 # [Multipurpose modmap] Give a key two meanings. A normal key when pressed and
 # released, and a modifier key when held down with another key. See Xcape,
@@ -116,7 +122,7 @@ define_multipurpose_modmap(
         Key.TAB: [Key.TAB, Key.RIGHT_ALT],
         Key.LEFT_ALT: [Key.BACKSPACE, Key.LEFT_ALT],
         # Capslock is escape when pressed and released. Control when held down.
-        Key.CAPSLOCK: [Key.ESC, Key.RIGHT_CTRL],
+        Key.CAPSLOCK: [Key.ESC, Key.LEFT_CTRL],
         # To use this example, you can't remap capslock with define_modmap.
     }
 )
