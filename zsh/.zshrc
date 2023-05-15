@@ -18,14 +18,14 @@ fi
 alias e='lvim'
 alias vf='vim $(fzf --height=40%)'
 alias ef='lvim $(fzf --height=40%)'
-alias pf='fzf --bind "f1:execute(lvim -f {}),ctrl-y:execute-silent(echo {} | xclip -sel clip -i)+abort,ctrl-alt-y:execute-silent(xclip -selection clipboard {})+abort"'
+alias pf='fzf --bind "f1:execute(lvim -f {}),ctrl-y:execute-silent(echo {} | xclip -sel clip -i)+abort,ctrl-alt-y:execute-silent(xclip -selection clipboard {})+abort"' # F1 编辑 C-Y 路径复制到剪切板 C-M-Y 选项内容复制到剪切板
 alias za='bash ~/c/b/mybin/zathuara_history_rofi.sh'
 alias mb='bash $(fd . ~/c/b | fzf)'
 alias ta='tmux attach'
 alias f="fg %\$(echo \$(jobs | fzf --height=40%) | awk -F'[][]' '{print \$2}')"
 alias ts="tmux switch -t \$(echo \$(tmux list-windows -a | fzf --height=40%) | sed 's/: .*//g')"
 alias emacs='emacsclient -nc $(fzf --height=40%)'
-alias tl="tldr --source=https://ghproxy.com/raw.githubusercontent.com/tldr-pages/tldr/master/pages"
+alias tl="tldr --no-auto-update"
 
 alias s="neofetch"
 alias ht="htop"
@@ -43,6 +43,7 @@ alias lxappearance='lxappearance ~/.config/gtk-3.0/settings.ini'
 alias ydt='youtube-dl --external-downloader aria2c --external-downloader-args "-s128 -x128 -j 3 -k 1M"'
 alias na='navi'
 alias nam='zsh -c $(fzf --height=40%)'
+alias xl="xclip -o | xclip -sel clip"
 
 # TouchPad
 alias touchpadoff='xinput list | awk "/Touchpad/ {print \$6}" | awk -F "=" "{print \$2}" | xargs xinput --disable'
