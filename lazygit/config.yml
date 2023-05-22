@@ -51,3 +51,6 @@ confirmOnQuit: false
 quitOnTopLevelReturn: true
 disableStartupPopups: false
 notARepository: 'prompt' # one of: 'prompt' | 'create' | 'skip'
+
+os:
+  edit: 'lvim {{filename}}'
