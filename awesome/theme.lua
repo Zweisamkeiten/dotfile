@@ -12,7 +12,7 @@ local themes_path = gfs.get_themes_dir()
 local theme = {}
 
 theme.font          = "Sarasa UI SC 12"
-theme.taglist_font  = "Sarasa UI SC 24"
+theme.taglist_font  = "monospace 28"
 theme.tasklist_font = "monospace 14"
 
 theme.bg_normal             = "#0d1117"
@@ -132,7 +132,7 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path .. "default/titleb
 theme.titlebar_maximized_button_normal_active   = themes_path .. "default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active    = themes_path .. "default/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = "/home/einsam/t/wallhaven-5g7jp9_3840x2160.png"
+theme.wallpaper = "/home/einsam/t/wall/wallhaven-p93gm9_3840x2160.png"
 
 -- You can use your own layout icons like this:
 local gcolor = require("gears.color")
