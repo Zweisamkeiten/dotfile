@@ -391,3 +391,23 @@ zstyle ':fzf-tab:*' prefix ''
 
 # 在 zshrc 的最后生效, 打印所有 shell 函数 去掉前导下划线
 alias paf="print -l ${(ok)functions[(I)[^_]*]} | fzf"
+
+function kf {
+  kill -9 $(_fzf_complete_kill)
+}
+
+fzf-kill-widget() {
+  local pid
+  if [[ "${UID}" != "0" ]]; then
+    pid=$(ps -f -u ${UID} | sed 1d | fzf -m --header-lines=1 --preview 'echo {}' --preview-window=down:3:wrap --height 40% | awk '{print $2}')
+  else
+    pid=$(ps -ef | sed 1d | fzf -m --header-lines=1 --preview 'echo {}' --preview-window=down:3:wrap --height 40% | awk '{print $2}')
+  fi
+
+  if [[ "x$pid" != "x" ]]; then
+    echo $pid | xargs kill "-${1:-9}"
+  fi
+  zle reset-prompt
+}
+zle     -N     fzf-kill-widget
+bindkey '^X^K' fzf-kill-widget
