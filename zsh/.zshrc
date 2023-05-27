@@ -17,7 +17,7 @@ fi
 # alias vim='lvim'
 alias e='lvim'
 alias vf='vim $(fzf --height=40%)'
-alias ef='lvim $(fzf --height=40%)'
+alias ef='FZF_DEFAULT_COMMAND="fd -c always -H --ignore-vcs -E .git -tf" fzf --bind "enter:become($EDITOR {})"'
 alias pf='fzf --bind "f1:execute(lvim -f {}),ctrl-y:execute-silent(echo {} | xclip -sel clip -i)+abort,ctrl-alt-y:execute-silent(xclip -selection clipboard {})+abort"' # F1 编辑 C-Y 路径复制到剪切板 C-M-Y 选项内容复制到剪切板
 alias za='bash ~/c/b/mybin/zathuara_history_rofi.sh'
 alias mb='bash $(fd . ~/c/b | fzf)'
