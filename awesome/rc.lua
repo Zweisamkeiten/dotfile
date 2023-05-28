@@ -6,6 +6,7 @@ pcall(require, "luarocks.loader")
 local gears = require("gears")
 local awful = require("awful")
 local lain = require("lain")
+require("awful.autofocus")
 local awesome, screen, root, client = awesome, screen, root, client
 -- Widget and layout library
 local wibox = require("wibox")
