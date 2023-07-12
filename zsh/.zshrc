@@ -15,10 +15,11 @@ fi
 # # End of lines added by compinstall
 
 # alias vim='lvim'
-alias e='lvim'
+alias nvim='env -u VIMINIT nvim'
+alias e='env -u VIMINIT nvim'
 alias vf='vim $(fzf --height=40%)'
 alias ef='FZF_DEFAULT_COMMAND="fd -c always -H --ignore-vcs -E .git -tf" fzf --bind "enter:become($EDITOR {})"'
-alias pf='fzf --bind "f1:execute(lvim -f {}),ctrl-y:execute-silent(echo {} | xclip -sel clip -i)+abort,ctrl-alt-y:execute-silent(xclip -selection clipboard {})+abort"' # F1 编辑 C-Y 路径复制到剪切板 C-M-Y 选项内容复制到剪切板
+alias pf='fzf --bind "f1:execute(e -f {}),ctrl-y:execute-silent(echo {} | xclip -sel clip -i)+abort,ctrl-alt-y:execute-silent(xclip -selection clipboard {})+abort"' # F1 编辑 C-Y 路径复制到剪切板 C-M-Y 选项内容复制到剪切板
 alias za='bash ~/c/b/mybin/zathuara_history_rofi.sh'
 alias mb='bash $(fd . ~/c/b | fzf)'
 alias ta='tmux attach'
@@ -50,14 +51,14 @@ alias touchpadoff='xinput list | awk "/Touchpad/ {print \$6}" | awk -F "=" "{pri
 alias touchpadon='xinput list | awk "/Touchpad/ {print \$6}" | awk -F "=" "{print \$2}" | xargs xinput --enable'
 
 # Quick edit
-alias zshrc='lvim ~/.config/zsh/.zshrc'
+alias zshrc='e ~/.config/zsh/.zshrc'
 alias vimrc='vim ~/.config/vim/vimrc'
-alias zshenv='lvim ~/.config/zsh/.zshenv'
-alias zshprofile='lvim ~/.config/zsh/.zprofile'
-alias zimrc='lvim ~/.config/zsh/.zimrc'
-alias picomconf='lvim ~/.config/picom/picom.conf'
-alias rc.lua='lvim ~/.config/awesome/rc.lua'
-alias theme.lua='lvim ~/.config/awesome/theme.lua'
+alias zshenv='e ~/.config/zsh/.zshenv'
+alias zshprofile='e ~/.config/zsh/.zprofile'
+alias zimrc='e ~/.config/zsh/.zimrc'
+alias picomconf='e ~/.config/picom/picom.conf'
+alias rc.lua='e ~/.config/awesome/rc.lua'
+alias theme.lua='e ~/.config/awesome/theme.lua'
 
 alias headphone='pactl set-sink-port alsa_output.pci-0000_00_1f.3.analog-stereo analog-output-headphones'
 alias mic='pactl set-source-port alsa_input.pci-0000_00_1f.3.analog-stereo analog-input-headset-mic'
@@ -411,3 +412,8 @@ fzf-kill-widget() {
 }
 zle     -N     fzf-kill-widget
 bindkey '^X^K' fzf-kill-widget
+
+rustpaste() {
+  local file=$1
+  curl --proxy socks://10.144.199.55:20170 -F "file=@$file" https://rustypaste.shuttleapp.rs | xclip -sel clip
+}
