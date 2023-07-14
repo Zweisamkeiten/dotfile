@@ -167,7 +167,7 @@ local bat = awful.widget.watch(
 	[[bash -c "echo $(cat /sys/class/power_supply/BAT0/capacity)"]],
 	60,
 	function(widget, stdout)
-		local level = tonumber(stdout) / 25
+		local level = tonumber(stdout) // 25
 		if level == 0 then
 			baticon:set_markup('<span color="#a6d189" font="' .. widget_font .. '">  </span>')
 		end
@@ -621,12 +621,13 @@ local modmap = {
 local globalkeys = gears.table.join(
 	-- Show/Hide Wibox
 	awful.key({ modkey }, "b", function()
-		for s in screen do
-			s.mywibox.visible = not s.mywibox.visible
-			if s.mybottomwibox then
-				s.mybottomwibox.visible = not s.mybottomwibox.visible
-			end
-		end
+		-- for s in awful.screen.focused() do
+    s = awful.screen.focused()
+    s.mywibox.visible = not s.mywibox.visible
+    if s.mybottomwibox then
+      s.mybottomwibox.visible = not s.mybottomwibox.visible
+    end
+		-- end
 	end, { description = "toggle wibox", group = "awesome" }),
 
 	awful.key({ modkey }, "d", function()
