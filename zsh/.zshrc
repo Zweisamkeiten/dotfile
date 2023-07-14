@@ -14,116 +14,6 @@ fi
 
 # # End of lines added by compinstall
 
-# alias vim='lvim'
-alias nvim='env -u VIMINIT nvim'
-alias e='env -u VIMINIT nvim'
-alias vf='vim $(fzf --height=40%)'
-alias ef='FZF_DEFAULT_COMMAND="fd -c always -H --ignore-vcs -E .git -tf" fzf --bind "enter:become($EDITOR {})"'
-alias pf='fzf --bind "f1:execute(e -f {}),ctrl-y:execute-silent(echo {} | xclip -sel clip -i)+abort,ctrl-alt-y:execute-silent(xclip -selection clipboard {})+abort"' # F1 编辑 C-Y 路径复制到剪切板 C-M-Y 选项内容复制到剪切板
-alias za='bash ~/c/b/mybin/zathuara_history_rofi.sh'
-alias mb='bash $(fd . ~/c/b | fzf)'
-alias ta='tmux attach'
-alias f="fg %\$(echo \$(jobs | fzf --height=40%) | awk -F'[][]' '{print \$2}')"
-alias ts="tmux switch -t \$(echo \$(tmux list-windows -a | fzf --height=40%) | sed 's/: .*//g')"
-alias emacs='emacsclient -nc $(fzf --height=40%)'
-alias tl="tldr --no-auto-update"
-
-alias s="neofetch"
-alias ht="htop"
-alias hi="history"
-alias la="ls --color -alh -v"
-alias ip='ip -color=auto'
-alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
-alias lg='lazygit'
-alias ra='ranger --choosedir=$XDG_STATE_HOME/ranger/rangerdir;cd "$(cat $XDG_STATE_HOME/ranger/rangerdir)"'
-alias netprocs='lsof -P -i -n'
-alias tg='trans en:zh -x 127.0.0.1:20171 -I -4'
-alias tb='trans en:zh -e bing -I -4'
-alias tz='trans zh:en -I -4 -x 127.0.0.1:20171'
-alias lxappearance='lxappearance ~/.config/gtk-3.0/settings.ini'
-alias ydt='youtube-dl --external-downloader aria2c --external-downloader-args "-s128 -x128 -j 3 -k 1M"'
-alias na='navi'
-alias nam='zsh -c $(fzf --height=40%)'
-alias xl="xclip -o | xclip -sel clip"
-
-# TouchPad
-alias touchpadoff='xinput list | awk "/Touchpad/ {print \$6}" | awk -F "=" "{print \$2}" | xargs xinput --disable'
-alias touchpadon='xinput list | awk "/Touchpad/ {print \$6}" | awk -F "=" "{print \$2}" | xargs xinput --enable'
-
-# Quick edit
-alias zshrc='e ~/.config/zsh/.zshrc'
-alias vimrc='vim ~/.config/vim/vimrc'
-alias zshenv='e ~/.config/zsh/.zshenv'
-alias zshprofile='e ~/.config/zsh/.zprofile'
-alias zimrc='e ~/.config/zsh/.zimrc'
-alias picomconf='e ~/.config/picom/picom.conf'
-alias rc.lua='e ~/.config/awesome/rc.lua'
-alias theme.lua='e ~/.config/awesome/theme.lua'
-
-alias headphone='pactl set-sink-port alsa_output.pci-0000_00_1f.3.analog-stereo analog-output-headphones'
-alias mic='pactl set-source-port alsa_input.pci-0000_00_1f.3.analog-stereo analog-input-headset-mic'
-alias speaker='pactl set-sink-port alsa_output.pci-0000_00_1f.3.analog-stereo analog-output-speaker'
-
-alias proxy='ALL_PROXY="socks://127.0.0.1:20170"'
-#alias gem='https_proxy="https//:127.0.0.1:20172" gem'
-
-alias cl='systemctl --user restart xkeysnail.service && bash ~/c/b/keyboard.sh'
-
-alias wget="wget --hsts-file="$XDG_CACHE_HOME/wget-hsts""
-# For those have not respected XDG Base Directory standard
-alias w3m="HOME=$XDG_DATA_HOME/w3m w3m"
-alias adb="HOME=$XDG_DATA_HOME/adb adb"
-alias flutter="HOME=$XDG_DATA_HOME/flutter flutter"
-alias dart="HOME=$XDG_DATA_HOME/dart dart"
-alias railway="HOME=$XDG_DATA_HOME/railway railway"
-
-alias dg="HOME=$XDG_DATA_HOME/digital java -jar $HOME/p/ysyx-workbench/npc/resources/Digital/Digital.jar &"
-#temp
-alias te="python ok --local"
-
-autoload -Uz compinit
-compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
-zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/zcompcache
-
-if [[ -a "$HOME/.xsession-errors" ]]; then
-  rm $HOME/.xsession-errors
-fi
-
-if [[ -a "$HOME/.icons" ]]; then
-  rm -rf $HOME/.icons
-fi
-
-if [[ -a "$HOME/.mozilla" ]]; then
-  rm -rf $HOME/.mozilla
-fi
-
-if [[ -a "$HOME/.pki" ]]; then
-  rm -rf $HOME/.pki
-fi
-
-if [[ -a "$HOME/.w3m" ]]; then
-  rm -rf $HOME/.w3m
-fi
-
-if [[ -a "$HOME/.python_history" ]]; then
-  rm $HOME/.python_history
-fi
-
-if [[ -a "$HOME/.yarnrc" ]]; then
-  rm $HOME/.yarnrc
-fi
-
-if [[ -a "$HOME/.node_repl_history" ]]; then
-  rm $HOME/.node_repl_history
-fi
-
-if [[ -a "$HOME/.wget-hsts" ]]; then
-  rm $HOME/.wget-hsts
-fi
-
-if [[ -a "$HOME/.android" ]]; then
-  rm -rf $HOME/.android
-fi
 # Start configuration added by Zim install {{{
 #
 # User configuration sourced by interactive shells
@@ -417,3 +307,116 @@ rustpaste() {
   local file=$1
   curl --proxy socks://10.144.199.55:20170 -F "file=@$file" https://rustypaste.shuttleapp.rs | xclip -sel clip
 }
+
+# my personal custom
+# alias vim='lvim'
+alias ls='lsd --group-directories-first --color=auto'
+alias nvim='env -u VIMINIT nvim'
+alias e='env -u VIMINIT nvim'
+alias vf='vim $(fzf --height=40%)'
+alias ef='FZF_DEFAULT_COMMAND="fd -c always -H --ignore-vcs -E .git -tf" fzf --bind "enter:become($EDITOR {})"'
+alias pf='fzf --bind "f1:execute(e -f {}),ctrl-y:execute-silent(echo {} | xclip -sel clip -i)+abort,ctrl-alt-y:execute-silent(xclip -selection clipboard {})+abort"' # F1 编辑 C-Y 路径复制到剪切板 C-M-Y 选项内容复制到剪切板
+alias za='bash ~/c/b/mybin/zathuara_history_rofi.sh'
+alias mb='bash $(fd . ~/c/b | fzf)'
+alias ta='tmux attach'
+alias f="fg %\$(echo \$(jobs | fzf --height=40%) | awk -F'[][]' '{print \$2}')"
+alias ts="tmux switch -t \$(echo \$(tmux list-windows -a | fzf --height=40%) | sed 's/: .*//g')"
+alias emacs='emacsclient -nc $(fzf --height=40%)'
+alias tl="tldr --no-auto-update"
+
+alias s="neofetch"
+alias ht="htop"
+alias hi="history"
+alias la="ls --color -alh -v"
+alias ip='ip -color=auto'
+alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
+alias lg='lazygit'
+alias ra='ranger --choosedir=$XDG_STATE_HOME/ranger/rangerdir;cd "$(cat $XDG_STATE_HOME/ranger/rangerdir)"'
+alias netprocs='lsof -P -i -n'
+alias tg='trans en:zh -x 127.0.0.1:20171 -I -4'
+alias tb='trans en:zh -e bing -I -4'
+alias tz='trans zh:en -I -4 -x 127.0.0.1:20171'
+alias lxappearance='lxappearance ~/.config/gtk-3.0/settings.ini'
+alias ydt='youtube-dl --external-downloader aria2c --external-downloader-args "-s128 -x128 -j 3 -k 1M"'
+alias na='navi'
+alias nam='zsh -c $(fzf --height=40%)'
+alias xl="xclip -o | xclip -sel clip"
+
+# TouchPad
+alias touchpadoff='xinput list | awk "/Touchpad/ {print \$6}" | awk -F "=" "{print \$2}" | xargs xinput --disable'
+alias touchpadon='xinput list | awk "/Touchpad/ {print \$6}" | awk -F "=" "{print \$2}" | xargs xinput --enable'
+
+# Quick edit
+alias zshrc='e ~/.config/zsh/.zshrc'
+alias vimrc='vim ~/.config/vim/vimrc'
+alias zshenv='e ~/.config/zsh/.zshenv'
+alias zshprofile='e ~/.config/zsh/.zprofile'
+alias zimrc='e ~/.config/zsh/.zimrc'
+alias picomconf='e ~/.config/picom/picom.conf'
+alias rc.lua='e ~/.config/awesome/rc.lua'
+alias theme.lua='e ~/.config/awesome/theme.lua'
+
+alias headphone='pactl set-sink-port alsa_output.pci-0000_00_1f.3.analog-stereo analog-output-headphones'
+alias mic='pactl set-source-port alsa_input.pci-0000_00_1f.3.analog-stereo analog-input-headset-mic'
+alias speaker='pactl set-sink-port alsa_output.pci-0000_00_1f.3.analog-stereo analog-output-speaker'
+
+alias proxy='ALL_PROXY="socks://127.0.0.1:20170"'
+#alias gem='https_proxy="https//:127.0.0.1:20172" gem'
+
+alias cl='systemctl --user restart xkeysnail.service && bash ~/c/b/keyboard.sh'
+
+alias wget="wget --hsts-file="$XDG_CACHE_HOME/wget-hsts""
+# For those have not respected XDG Base Directory standard
+alias w3m="HOME=$XDG_DATA_HOME/w3m w3m"
+alias adb="HOME=$XDG_DATA_HOME/adb adb"
+alias flutter="HOME=$XDG_DATA_HOME/flutter flutter"
+alias dart="HOME=$XDG_DATA_HOME/dart dart"
+alias railway="HOME=$XDG_DATA_HOME/railway railway"
+
+alias dg="HOME=$XDG_DATA_HOME/digital java -jar $HOME/p/ysyx-workbench/npc/resources/Digital/Digital.jar &"
+#temp
+alias te="python ok --local"
+
+autoload -Uz compinit
+compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
+zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/zcompcache
+
+if [[ -a "$HOME/.xsession-errors" ]]; then
+  rm $HOME/.xsession-errors
+fi
+
+if [[ -a "$HOME/.icons" ]]; then
+  rm -rf $HOME/.icons
+fi
+
+if [[ -a "$HOME/.mozilla" ]]; then
+  rm -rf $HOME/.mozilla
+fi
+
+if [[ -a "$HOME/.pki" ]]; then
+  rm -rf $HOME/.pki
+fi
+
+if [[ -a "$HOME/.w3m" ]]; then
+  rm -rf $HOME/.w3m
+fi
+
+if [[ -a "$HOME/.python_history" ]]; then
+  rm $HOME/.python_history
+fi
+
+if [[ -a "$HOME/.yarnrc" ]]; then
+  rm $HOME/.yarnrc
+fi
+
+if [[ -a "$HOME/.node_repl_history" ]]; then
+  rm $HOME/.node_repl_history
+fi
+
+if [[ -a "$HOME/.wget-hsts" ]]; then
+  rm $HOME/.wget-hsts
+fi
+
+if [[ -a "$HOME/.android" ]]; then
+  rm -rf $HOME/.android
+fi
