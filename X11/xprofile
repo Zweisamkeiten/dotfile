@@ -1,2 +1,4 @@
-eval `ssh-agent`
+#!/bin/zsh
+
+(eval $(ssh-agent))
 fcitx5 &
