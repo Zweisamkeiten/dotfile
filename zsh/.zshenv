@@ -114,3 +114,7 @@ export TEXMFVAR=$XDG_CACHE_HOME/texlive/texmf-var
 export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
 export RUSTUP_UPDATE_ROOT=https://opentuna.cn/rustup/rustup
 export RUSTUP_DIST_SERVER=https://opentuna.cn/rustup
+
+# kitty
+# Enable IME support
+GLFW_IM_MODULE=ibus
